@@ -1,0 +1,148 @@
+syntax = "proto3";
+import "google/protobuf/field_mask.proto";
+
+option go_package = "music.com/musicservice/protos";
+package musicservice;
+
+import "models.proto";
+
+/**
+ * The main Artist server, serving as an entry into managing artist lifecycles
+ * and retrieving them
+ */
+service ArtistService {
+  /**
+   * Create a new Artist
+   */
+  rpc CreateArtist(CreateArtistRequest) returns (CreateArtistResponse) { }
+
+  /**
+   * Batch gets multiple artists.
+   */
+  rpc GetArtists(GetArtistsRequest) returns (GetArtistsResponse) { }
+
+  /**
+   * Updates specific fields of an Artist
+   */
+  rpc UpdateArtist(UpdateArtistRequest) returns (UpdateArtistResponse) { }
+
+  /**
+   * Deletes an artist from our system.
+   */
+  rpc DeleteArtist(DeleteArtistRequest) returns (DeleteArtistResponse) { }
+
+  /**
+   * Finds and retrieves artists matching the particular criteria.
+   */
+  rpc ListArtists(ListArtistsRequest) returns (ListArtistsResponse) { }
+}
+
+/**
+ * Artist creation request object
+ */
+message CreateArtistRequest {
+  /**
+   * Artist being updated
+   */
+  Artist artist = 1;
+}
+
+/**
+ * Response of an artist creation.
+ */
+message CreateArtistResponse {
+  /**
+   * Artist being created
+   */
+  Artist artist = 1;
+}
+
+/**
+ * The request for (partially) updating an Artist.
+ */
+message UpdateArtistRequest {
+  /**
+   * Artist being updated
+   */
+  Artist artist = 1;
+
+  /**
+   * Mask of fields being updated in this Artist to make partial changes.
+   */
+  google.protobuf.FieldMask update_mask = 2;
+}
+
+/**
+ * The request for (partially) updating an Artist.
+ */
+message UpdateArtistResponse {
+  /**
+   * Artist being updated
+   */
+  Artist artist = 1;
+}
+
+/**
+ * Batch gets multiple artists.
+ */
+message GetArtistsRequest {
+  repeated string ids = 1;
+}
+
+/**
+ * Response for an artist batch get.
+ */
+message GetArtistsResponse {
+  /**
+   * Artists mapped by their ID.
+   */
+  map<string, Artist> artists = 1;
+}
+
+/**
+ * An artist search request.  For now only paginations params are provided.
+ */
+message ListArtistsRequest {
+  /**
+   * Instead of an offset an abstract  "page" key is provided that offers
+   * an opaque "pointer" into some offset in a result set.
+   */
+  string page_key = 1;
+
+  /**
+   * Number of results to return.
+   */
+  int32 count = 2;
+}
+
+/**
+ * Response of a artist search/listing.
+ */
+message ListArtistsResponse {
+  /**
+   * The list of artists found as part of this response.
+   */
+  repeated Artist artists = 1;
+
+  /**
+   * The key/pointer string that subsequent List requests should pass to
+   * continue the pagination.
+   */
+  string next_page_key = 2;
+}
+
+/**
+ * Request to delete an artist.
+ */
+message DeleteArtistRequest {
+  /**
+   * ID of the artist to be deleted.
+   */
+  string id = 1;
+}
+
+/**
+ * Artist deletion response
+ */
+message DeleteArtistResponse {
+}

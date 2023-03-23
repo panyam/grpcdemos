@@ -1,0 +1,83 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "music.com/musicservice/protos";
+package musicservice;
+
+// A song - eg Jingle Bells
+message Song {
+  google.protobuf.Timestamp created_at = 1;
+  google.protobuf.Timestamp updated_at = 2;
+
+  // ID of this song
+  string id = 3;
+
+  // Opening title for this song
+  string title = 4;
+
+  // ID of the composer/artist for this Song
+  string composer_id = 5;
+
+  // A homepage containing all other info about the Song
+  string homepage = 6;
+}
+
+// Artists perform/play/sing songs
+message Artist {
+  google.protobuf.Timestamp created_at = 1;
+  google.protobuf.Timestamp updated_at = 2;
+
+  // ID of the artist
+  string id = 3;
+  
+  // Name of the artist
+  string full_name = 5;
+
+  // Artist's date of birth
+  google.protobuf.Timestamp date_of_birth = 6;
+
+  // Country of residence
+  string country = 7;
+}
+
+// Album showcasing a bunch of artists performing a bunch of songs.
+message Album {
+  google.protobuf.Timestamp created_at = 1;
+  google.protobuf.Timestamp updated_at = 2;
+
+  // ID of the Album
+  string id = 3;
+
+  // Album title
+  string title = 4;
+
+  // Artists performing in this album
+  repeated string artist_ids = 5;
+
+  // Songs performed in this album
+  repeated string song_ids = 6;
+
+  // Where this album was performed
+  string venue = 7;
+
+  // Date released on
+  google.protobuf.Timestamp release_date = 8;
+}
+
+// A record label company.   This entity is the owner of albums as they produce and release them.
+// Note unlike the Album entity the Label does not contain a (repeated) field of all albums it
+// owns.   This is because the way the albums are added to or removed from a Label's collection
+// is via the API.
+message Label {
+  google.protobuf.Timestamp created_at = 1;
+  google.protobuf.Timestamp updated_at = 2;
+
+  // ID of this label
+  string id = 3;
+
+  // Name of this record label company (eg, "Virgin Records")
+  string name = 4;
+
+  // When this company was established
+  google.protobuf.Timestamp established_date = 5;
+}

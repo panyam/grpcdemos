@@ -1,0 +1,148 @@
+syntax = "proto3";
+import "google/protobuf/field_mask.proto";
+
+option go_package = "music.com/musicservice/protos";
+package musicservice;
+
+import "models.proto";
+
+/**
+ * The main Song server, serving as an entry into managing song lifecycles
+ * and retrieving them
+ */
+service SongService {
+  /**
+   * Create a new Song
+   */
+  rpc CreateSong(CreateSongRequest) returns (CreateSongResponse) { }
+
+  /**
+   * Batch gets multiple songs.
+   */
+  rpc GetSongs(GetSongsRequest) returns (GetSongsResponse) { }
+
+  /**
+   * Updates specific fields of an Song
+   */
+  rpc UpdateSong(UpdateSongRequest) returns (UpdateSongResponse) { }
+
+  /**
+   * Deletes an song from our system.
+   */
+  rpc DeleteSong(DeleteSongRequest) returns (DeleteSongResponse) { }
+
+  /**
+   * Finds and retrieves songs matching the particular criteria.
+   */
+  rpc ListSongs(ListSongsRequest) returns (ListSongsResponse) { }
+}
+
+/**
+ * Song creation request object
+ */
+message CreateSongRequest {
+  /**
+   * Song being updated
+   */
+  Song song = 1;
+}
+
+/**
+ * Response of an song creation.
+ */
+message CreateSongResponse {
+  /**
+   * Song being created
+   */
+  Song song = 1;
+}
+
+/**
+ * The request for (partially) updating an Song.
+ */
+message UpdateSongRequest {
+  /**
+   * Song being updated
+   */
+  Song song = 1;
+
+  /**
+   * Mask of fields being updated in this Song to make partial changes.
+   */
+  google.protobuf.FieldMask update_mask = 2;
+}
+
+/**
+ * The request for (partially) updating an Song.
+ */
+message UpdateSongResponse {
+  /**
+   * Song being updated
+   */
+  Song song = 1;
+}
+
+/**
+ * Batch gets multiple songs.
+ */
+message GetSongsRequest {
+  repeated string ids = 1;
+}
+
+/**
+ * Response for an song batch get.
+ */
+message GetSongsResponse {
+  /**
+   * Songs mapped by their ID.
+   */
+  map<string, Song> songs = 1;
+}
+
+/**
+ * An song search request.  For now only paginations params are provided.
+ */
+message ListSongsRequest {
+  /**
+   * Instead of an offset an abstract  "page" key is provided that offers
+   * an opaque "pointer" into some offset in a result set.
+   */
+  string page_key = 1;
+
+  /**
+   * Number of results to return.
+   */
+  int32 count = 2;
+}
+
+/**
+ * Response of a song search/listing.
+ */
+message ListSongsResponse {
+  /**
+   * The list of songs found as part of this response.
+   */
+  repeated Song songs = 1;
+
+  /**
+   * The key/pointer string that subsequent List requests should pass to
+   * continue the pagination.
+   */
+  string next_page_key = 2;
+}
+
+/**
+ * Request to delete an song.
+ */
+message DeleteSongRequest {
+  /**
+   * ID of the song to be deleted.
+   */
+  string id = 1;
+}
+
+/**
+ * Song deletion response
+ */
+message DeleteSongResponse {
+}

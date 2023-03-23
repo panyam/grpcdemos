@@ -1,0 +1,237 @@
+syntax = "proto3";
+import "google/protobuf/field_mask.proto";
+
+option go_package = "music.com/musicservice/protos";
+package musicservice;
+
+import "models.proto";
+
+/**
+ * The label service, serving as an entry into managing label lifecycles
+ * and retrieving them
+ */
+service LabelService {
+  /**
+   * Create a new Label
+   */
+  rpc CreateLabel(CreateLabelRequest) returns (CreateLabelResponse) { }
+
+  /**
+   * Batch gets multiple labels.
+   */
+  rpc GetLabels(GetLabelsRequest) returns (GetLabelsResponse) { }
+
+  /**
+   * Updates specific fields of an Label
+   */
+  rpc UpdateLabel(UpdateLabelRequest) returns (UpdateLabelResponse) { }
+
+  /**
+   * Deletes an label from our system.
+   */
+  rpc DeleteLabel(DeleteLabelRequest) returns (DeleteLabelResponse) { }
+
+  /**
+   * Finds and retrieves labels matching the particular criteria.
+   */
+  rpc ListLabels(ListLabelsRequest) returns (ListLabelsResponse) { }
+
+  /**
+   * Add an album to this label.
+   */
+  rpc AddAlbum(AddAlbumRequest) returns (AddAlbumResponse) { }
+
+  /**
+   * Remove an album from this label.
+   */
+  rpc RemoveAlbum(RemoveAlbumRequest) returns (RemoveAlbumResponse) { }
+
+  /**
+   * List all albums owned by this label.
+   */
+  rpc ListAlbums(ListAlbumsInLabelRequest) returns (ListAlbumsInLabelResponse) {}
+}
+
+/**
+ * Label creation request object
+ */
+message CreateLabelRequest {
+  /**
+   * Label being updated
+   */
+  Label label = 1;
+}
+
+/**
+ * Response of an label creation.
+ */
+message CreateLabelResponse {
+  /**
+   * Label being created
+   */
+  Label label = 1;
+}
+
+/**
+ * The request for (partially) updating an Label.
+ */
+message UpdateLabelRequest {
+  /**
+   * Label being updated
+   */
+  Label label = 1;
+
+  /**
+   * Mask of fields being updated in this Label to make partial changes.
+   */
+  google.protobuf.FieldMask update_mask = 2;
+}
+
+/**
+ * The request for (partially) updating an Label.
+ */
+message UpdateLabelResponse {
+  /**
+   * Label being updated
+   */
+  Label label = 1;
+}
+
+/**
+ * Batch gets multiple labels.
+ */
+message GetLabelsRequest {
+  repeated string ids = 1;
+}
+
+/**
+ * Response for an label batch get.
+ */
+message GetLabelsResponse {
+  /**
+   * Labels mapped by their ID.
+   */
+  map<string, Label> labels = 1;
+}
+
+/**
+ * An label search request.  For now only paginations params are provided.
+ */
+message ListLabelsRequest {
+  /**
+   * Instead of an offset an abstract  "page" key is provided that offers
+   * an opaque "pointer" into some offset in a result set.
+   */
+  string page_key = 1;
+
+  /**
+   * Number of results to return.
+   */
+  int32 count = 2;
+}
+
+/**
+ * Response of a label search/listing.
+ */
+message ListLabelsResponse {
+  /**
+   * The list of labels found as part of this response.
+   */
+  repeated Label labels = 1;
+
+  /**
+   * The key/pointer string that subsequent List requests should pass to
+   * continue the pagination.
+   */
+  string next_page_key = 2;
+}
+
+/**
+ * Request to delete an label.
+ */
+message DeleteLabelRequest {
+  /**
+   * ID of the label to be deleted.
+   */
+  string id = 1;
+}
+
+/**
+ * Label deletion response
+ */
+message DeleteLabelResponse {
+}
+
+/**
+ * Request to add an album to a label.
+ */
+message AddAlbumRequest {
+  /**
+   * Label to add the album to.
+   */
+  string label_id = 1;
+
+  /**
+   * The album to be added.
+   */
+  string album_id = 2;
+}
+
+/**
+ * Response for an AddAlbum request
+ */
+message AddAlbumResponse {
+}
+
+/**
+ * Request to remove an album to a label.
+ */
+message RemoveAlbumRequest {
+  /**
+   * Label to remove the album to.
+   */
+  string label_id = 1;
+
+  /**
+   * The album to be removeed.
+   */
+  string album_id = 2;
+}
+
+/**
+ * Response for an RemoveAlbum request
+ */
+message RemoveAlbumResponse {
+}
+
+/**
+ * Request object for an album listing.
+ */
+message ListAlbumsInLabelRequest {
+  /**
+   * Instead of an offset an abstract  "page" key is provided that offers
+   * an opaque "pointer" into some offset in a result set.
+   */
+  string page_key = 1;
+
+  /**
+   * Number of results to return.
+   */
+  int32 count = 2;
+}
+
+/**
+ * Response for listing albums in a label.
+ */
+message ListAlbumsInLabelResponse {
+  /**
+   * List of albums.
+   */
+  repeated Album albums = 1;
+
+  /**
+   * The key/pointer string that subsequent List requests should pass to
+   * continue the pagination.
+   */
+  string next_page_key = 2;
+}
