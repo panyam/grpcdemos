@@ -12,8 +12,8 @@ message Song {
   // ID of this song
   string id = 3;
 
-  // Opening title for this song
-  string title = 4;
+  // Name for this song
+  string name = 4;
 
   // ID of the composer/artist for this Song
   string composer_id = 5;
@@ -30,8 +30,8 @@ message Artist {
   // ID of the artist
   string id = 3;
   
-  // Name of the artist
-  string full_name = 5;
+  // Full name of the artist
+  string name = 5;
 
   // Artist's date of birth
   google.protobuf.Timestamp date_of_birth = 6;
@@ -48,8 +48,8 @@ message Album {
   // ID of the Album
   string id = 3;
 
-  // Album title
-  string title = 4;
+  // Album name
+  string name = 4;
 
   // Artists performing in this album
   repeated string artist_ids = 5;
