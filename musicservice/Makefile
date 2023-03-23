@@ -11,7 +11,7 @@ SRC_DIR:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 PROTO_DIR:=$(SRC_DIR)/protos
 
 # where we want to generate server stubs, clients etc
-OUT_DIR:=$(SRC_DIR)/gen/musicservice/v1
+OUT_DIR:=$(SRC_DIR)/gen/go/musicservice/v1
 
 all: printenv goprotos
 
