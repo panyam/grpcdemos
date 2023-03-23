@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-type EntityService[T any] struct {
+type EntityStore[T any] struct {
 	IDCount  int
 	Entities map[string]*T
 
@@ -27,13 +27,13 @@ type EntityService[T any] struct {
 	LTFunc func(ent1, ent2 *T) bool
 }
 
-func NewEntityService[T any]() *EntityService[T] {
-	return &EntityService[T]{
+func NewEntityStore[T any]() *EntityStore[T] {
+	return &EntityStore[T]{
 		Entities: make(map[string]*T),
 	}
 }
 
-func (s *EntityService[T]) Create(entity *T) *T {
+func (s *EntityStore[T]) Create(entity *T) *T {
 	s.IDCount++
 	newid := fmt.Sprintf("%d", s.IDCount)
 	s.IDSetter(entity, newid)
@@ -42,14 +42,14 @@ func (s *EntityService[T]) Create(entity *T) *T {
 	return entity
 }
 
-func (s *EntityService[T]) Get(id string) *T {
+func (s *EntityStore[T]) Get(id string) *T {
 	if entity, ok := s.Entities[id]; ok {
 		return entity
 	}
 	return nil
 }
 
-func (s *EntityService[T]) BatchGet(ids []string) map[string]*T {
+func (s *EntityStore[T]) BatchGet(ids []string) map[string]*T {
 	out := make(map[string]*T)
 	for _, id := range ids {
 		if entity, ok := s.Entities[id]; ok {
@@ -60,13 +60,13 @@ func (s *EntityService[T]) BatchGet(ids []string) map[string]*T {
 }
 
 // Updates specific fields of an Entity
-func (s *EntityService[T]) Update(entity *T) *T {
+func (s *EntityStore[T]) Update(entity *T) *T {
 	s.UpdatedAtSetter(entity, tspb.New(time.Now()))
 	return entity
 }
 
 // Deletes an song from our system.
-func (s *EntityService[T]) Delete(id string) bool {
+func (s *EntityStore[T]) Delete(id string) bool {
 	_, ok := s.Entities[id]
 	if ok {
 		delete(s.Entities, id)
@@ -75,7 +75,7 @@ func (s *EntityService[T]) Delete(id string) bool {
 }
 
 // Finds and retrieves songs matching the particular criteria.
-func (s *EntityService[T]) List(ltfunc func(t1, t2 *T) bool) (out []*T) {
+func (s *EntityStore[T]) List(ltfunc func(t1, t2 *T) bool) (out []*T) {
 	for _, ent := range s.Entities {
 		out = append(out, ent)
 	}
