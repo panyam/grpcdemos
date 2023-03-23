@@ -3,42 +3,42 @@ package services
 import (
 	"context"
 
-	protos "music.com/musicservice/gen/musicservice/v1"
+	protos "music.com/musicservice/gen/go/musicservice/v1"
 )
 
-type SongServiceServer struct {
+type LabelServiceServer struct {
 }
 
-func NewSongServiceServer() *SongServiceServer {
-	return &SongServiceServer{}
+func NewLabelServiceServer() *LabelServiceServer {
+	return &LabelServiceServer{}
 }
 
-// Create a new Song
-func (s *SongServiceServer) CreateSong(ctx context.Context, req *protos.CreateSongRequest) (resp *protos.CreateSongResponse, err error) {
-	resp = &protos.CreateSongResponse{}
+// Create a new Label
+func (s *LabelServiceServer) CreateLabel(ctx context.Context, req *protos.CreateLabelRequest) (resp *protos.CreateLabelResponse, err error) {
+	resp = &protos.CreateLabelResponse{}
 	return
 }
 
-// Batch gets multiple songs.
-func (s *SongServiceServer) GetSongs(ctx context.Context, req *protos.GetSongsRequest) (resp *protos.GetSongsResponse, err error) {
-	resp = &protos.GetSongsResponse{}
+// Batch gets multiple labels.
+func (s *LabelServiceServer) GetLabels(ctx context.Context, req *protos.GetLabelsRequest) (resp *protos.GetLabelsResponse, err error) {
+	resp = &protos.GetLabelsResponse{}
 	return
 }
 
-// Updates specific fields of an Song
-func (s *SongServiceServer) UpdateSong(ctx context.Context, req *protos.UpdateSongRequest) (resp *protos.UpdateSongResponse, err error) {
-	resp = &protos.UpdateSongResponse{}
+// Updates specific fields of an Label
+func (s *LabelServiceServer) UpdateLabel(ctx context.Context, req *protos.UpdateLabelRequest) (resp *protos.UpdateLabelResponse, err error) {
+	resp = &protos.UpdateLabelResponse{}
 	return
 }
 
-// Deletes an song from our system.
-func (s *SongServiceServer) DeleteSong(ctx context.Context, req *protos.DeleteSongRequest) (resp *protos.DeleteSongResponse, err error) {
-	resp = &protos.DeleteSongResponse{}
+// Deletes an label from our system.
+func (s *LabelServiceServer) DeleteLabel(ctx context.Context, req *protos.DeleteLabelRequest) (resp *protos.DeleteLabelResponse, err error) {
+	resp = &protos.DeleteLabelResponse{}
 	return
 }
 
-// Finds and retrieves songs matching the particular criteria.
-func (s *SongServiceServer) ListSongs(ctx context.Context, req *protos.ListSongsRequest) (resp *protos.ListSongsResponse, err error) {
-	resp = &protos.ListSongsResponse{}
+// Finds and retrieves labels matching the particular criteria.
+func (s *LabelServiceServer) ListLabels(ctx context.Context, req *protos.ListLabelsRequest) (resp *protos.ListLabelsResponse, err error) {
+	resp = &protos.ListLabelsResponse{}
 	return
 }

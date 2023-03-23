@@ -3,7 +3,7 @@ package services
 import (
 	"context"
 
-	protos "music.com/musicservice/gen/musicservice/v1"
+	protos "music.com/musicservice/gen/go/musicservice/v1"
 )
 
 type AlbumServiceServer struct {
