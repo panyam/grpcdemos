@@ -8,6 +8,9 @@ import (
 
 	v1 "music.com/musicservice/gen/go/musicservice/v1"
 	svc "music.com/musicservice/services"
+
+	// This is needed to enable the use of the grpc_cli tool
+	"google.golang.org/grpc/reflection"
 )
 
 var (
@@ -17,7 +20,7 @@ var (
 func startGRPCServer(addr string) {
 	// create new gRPC server
 	server := grpc.NewServer()
-	v1.RegisterSongServiceServer(server, svc.NewSongServiceServer())
+	v1.RegisterSongServiceServer(server, svc.NewSongService(nil))
 	v1.RegisterAlbumServiceServer(server, svc.NewAlbumServiceServer())
 	v1.RegisterArtistServiceServer(server, svc.NewArtistServiceServer())
 	v1.RegisterLabelServiceServer(server, svc.NewLabelServiceServer())
@@ -26,6 +29,7 @@ func startGRPCServer(addr string) {
 	} else {
 		// the gRPC server
 		log.Printf("Starting grpc endpoint on %s:", addr)
+		reflection.Register(server)
 		if err := server.Serve(l); err != nil {
 			log.Fatal("unable to start server", err)
 		}

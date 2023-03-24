@@ -3,6 +3,7 @@ package services
 import (
 	"fmt"
 	tspb "google.golang.org/protobuf/types/known/timestamppb"
+	"log"
 	"sort"
 	"time"
 )
@@ -22,9 +23,6 @@ type EntityStore[T any] struct {
 	// Getters/Setters for udpated timestamp
 	UpdatedAtSetter func(entity *T, ts *tspb.Timestamp)
 	UpdatedAtGetter func(entity *T) *tspb.Timestamp
-
-	// A function that returns whether entity1 < entity2 for sorting
-	LTFunc func(ent1, ent2 *T) bool
 }
 
 func NewEntityStore[T any]() *EntityStore[T] {
@@ -36,6 +34,7 @@ func NewEntityStore[T any]() *EntityStore[T] {
 func (s *EntityStore[T]) Create(entity *T) *T {
 	s.IDCount++
 	newid := fmt.Sprintf("%d", s.IDCount)
+	s.Entities[newid] = entity
 	s.IDSetter(entity, newid)
 	s.CreatedAtSetter(entity, tspb.New(time.Now()))
 	s.UpdatedAtSetter(entity, tspb.New(time.Now()))
@@ -76,11 +75,9 @@ func (s *EntityStore[T]) Delete(id string) bool {
 
 // Finds and retrieves songs matching the particular criteria.
 func (s *EntityStore[T]) List(ltfunc func(t1, t2 *T) bool) (out []*T) {
+	log.Println("E: ", s.Entities)
 	for _, ent := range s.Entities {
 		out = append(out, ent)
-	}
-	if ltfunc == nil {
-		ltfunc = s.LTFunc
 	}
 	// Sort in reverse order of name
 	sort.Slice(out, func(idx1, idx2 int) bool {

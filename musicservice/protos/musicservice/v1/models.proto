@@ -20,6 +20,9 @@ message Song {
 
   // A homepage containing all other info about the Song
   string homepage = 6;
+
+  // All performing artists for this song
+  repeated string performer_ids = 7;
 }
 
 // Artists perform/play/sing songs
@@ -51,17 +54,14 @@ message Album {
   // Album name
   string name = 4;
 
-  // Artists performing in this album
-  repeated string artist_ids = 5;
-
   // Songs performed in this album
-  repeated string song_ids = 6;
+  repeated string song_ids = 5;
 
   // Where this album was performed
-  string venue = 7;
+  string venue = 6;
 
   // Date released on
-  google.protobuf.Timestamp release_date = 8;
+  google.protobuf.Timestamp release_date = 7;
 }
 
 // A record label company.   This entity is the owner of albums as they produce and release them.
