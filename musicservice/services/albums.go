@@ -2,83 +2,72 @@ package services
 
 import (
 	"context"
-	"fmt"
 	tspb "google.golang.org/protobuf/types/known/timestamppb"
+	"log"
 	protos "music.com/musicservice/gen/go/musicservice/v1"
-	"sort"
 	"strings"
-	"time"
 )
 
-type AlbumServiceServer struct {
+type AlbumService struct {
 	protos.UnimplementedAlbumServiceServer
-	Entities map[string]*protos.Album
-	IDCount  int
+	*EntityStore[protos.Album]
 }
 
-func NewAlbumServiceServer() *AlbumServiceServer {
-	return &AlbumServiceServer{
-		Entities: make(map[string]*protos.Album),
+func NewAlbumService(estore *EntityStore[protos.Album]) *AlbumService {
+	if estore == nil {
+		estore = NewEntityStore[protos.Album]()
+	}
+	estore.IDSetter = func(album *protos.Album, id string) { album.Id = id }
+	estore.IDGetter = func(album *protos.Album) string { return album.Id }
+
+	estore.CreatedAtSetter = func(album *protos.Album, val *tspb.Timestamp) { album.CreatedAt = val }
+	estore.CreatedAtGetter = func(album *protos.Album) *tspb.Timestamp { return album.CreatedAt }
+
+	estore.UpdatedAtSetter = func(album *protos.Album, val *tspb.Timestamp) { album.UpdatedAt = val }
+	estore.UpdatedAtGetter = func(album *protos.Album) *tspb.Timestamp { return album.UpdatedAt }
+
+	return &AlbumService{
+		EntityStore: estore,
 	}
 }
 
 // Create a new Album
-func (s *AlbumServiceServer) CreateAlbum(ctx context.Context, req *protos.CreateAlbumRequest) (resp *protos.CreateAlbumResponse, err error) {
+func (s *AlbumService) CreateAlbum(ctx context.Context, req *protos.CreateAlbumRequest) (resp *protos.CreateAlbumResponse, err error) {
 	resp = &protos.CreateAlbumResponse{}
-	resp.Album = req.Album
-	s.IDCount++
-	req.Album.Id = fmt.Sprintf("%d", s.IDCount)
-	req.Album.CreatedAt = tspb.New(time.Now())
-	req.Album.UpdatedAt = tspb.New(time.Now())
-	s.Entities[req.Album.Id] = req.Album
-
-	// Ideally we want:
-	// resp.Album = s.BaseEntityService.CreateEntity(req.Album)
+	resp.Album = s.EntityStore.Create(req.Album)
 	return
 }
 
 // Batch gets multiple albums.
-func (s *AlbumServiceServer) GetAlbums(ctx context.Context, req *protos.GetAlbumsRequest) (resp *protos.GetAlbumsResponse, err error) {
+func (s *AlbumService) GetAlbums(ctx context.Context, req *protos.GetAlbumsRequest) (resp *protos.GetAlbumsResponse, err error) {
+	log.Println("BatchGet for IDs: ", req.Ids)
 	resp = &protos.GetAlbumsResponse{
-		Albums: make(map[string]*protos.Album),
-	}
-	for _, albumid := range req.Ids {
-		if album, ok := s.Entities[albumid]; ok {
-			resp.Albums[albumid] = album
-		}
+		Albums: s.EntityStore.BatchGet(req.Ids),
 	}
 	return
 }
 
 // Updates specific fields of an Album
-func (s *AlbumServiceServer) UpdateAlbum(ctx context.Context, req *protos.UpdateAlbumRequest) (resp *protos.UpdateAlbumResponse, err error) {
+func (s *AlbumService) UpdateAlbum(ctx context.Context, req *protos.UpdateAlbumRequest) (resp *protos.UpdateAlbumResponse, err error) {
 	resp = &protos.UpdateAlbumResponse{
-		Album: req.Album,
+		Album: s.EntityStore.Update(req.Album),
 	}
-	resp.Album.UpdatedAt = tspb.New(time.Now())
 	return
 }
 
 // Deletes an album from our system.
-func (s *AlbumServiceServer) DeleteAlbum(ctx context.Context, req *protos.DeleteAlbumRequest) (resp *protos.DeleteAlbumResponse, err error) {
+func (s *AlbumService) DeleteAlbum(ctx context.Context, req *protos.DeleteAlbumRequest) (resp *protos.DeleteAlbumResponse, err error) {
 	resp = &protos.DeleteAlbumResponse{}
-	if _, ok := s.Entities[req.Id]; ok {
-		delete(s.Entities, req.Id)
-	}
+	s.EntityStore.Delete(req.Id)
 	return
 }
 
 // Finds and retrieves albums matching the particular criteria.
-func (s *AlbumServiceServer) ListAlbums(ctx context.Context, req *protos.ListAlbumsRequest) (resp *protos.ListAlbumsResponse, err error) {
-	resp = &protos.ListAlbumsResponse{}
-	for _, album := range s.Entities {
-		resp.Albums = append(resp.Albums, album)
-	}
-	// Sort in reverse order of name
-	sort.Slice(resp.Albums, func(idx1, idx2 int) bool {
-		album1 := resp.Albums[idx1]
-		album2 := resp.Albums[idx2]
-		return strings.Compare(album1.Name, album2.Name) < 0
+func (s *AlbumService) ListAlbums(ctx context.Context, req *protos.ListAlbumsRequest) (resp *protos.ListAlbumsResponse, err error) {
+	results := s.EntityStore.List(func(s1, s2 *protos.Album) bool {
+		return strings.Compare(s1.Name, s2.Name) < 0
 	})
+	log.Println("Found Albums: ", results)
+	resp = &protos.ListAlbumsResponse{Albums: results}
 	return
 }
