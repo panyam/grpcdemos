@@ -21,9 +21,9 @@ func startGRPCServer(addr string) {
 	// create new gRPC server
 	server := grpc.NewServer()
 	v1.RegisterSongServiceServer(server, svc.NewSongService(nil))
-	v1.RegisterAlbumServiceServer(server, svc.NewAlbumServiceServer())
-	v1.RegisterArtistServiceServer(server, svc.NewArtistServiceServer())
-	v1.RegisterLabelServiceServer(server, svc.NewLabelServiceServer())
+	v1.RegisterAlbumServiceServer(server, svc.NewAlbumService(nil))
+	v1.RegisterArtistServiceServer(server, svc.NewArtistService(nil))
+	v1.RegisterLabelServiceServer(server, svc.NewLabelService(nil))
 	if l, err := net.Listen("tcp", addr); err != nil {
 		log.Fatalf("error in listening on port %s: %v", addr, err)
 	} else {
