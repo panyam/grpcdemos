@@ -1,11 +1,14 @@
 package main
 
 import (
+	"context"
 	"flag"
 	"google.golang.org/grpc"
 	"log"
 	"net"
+	"net/http"
 
+	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	v1 "music.com/musicservice/gen/go/musicservice/v1"
 	svc "music.com/musicservice/services"
 
@@ -14,7 +17,8 @@ import (
 )
 
 var (
-	addr = flag.String("addr", ":9000", "Address to start the musicservice grpc server on.")
+	addr    = flag.String("addr", ":9000", "Address to start the grpc server on.")
+	gw_addr = flag.String("gw_addr", ":8080", "Address to start the grpc gateway server on.")
 )
 
 func startGRPCServer(addr string) {
@@ -36,7 +40,31 @@ func startGRPCServer(addr string) {
 	}
 }
 
+func startGatewayServer(gw_addr, grpc_addr string) {
+	ctx := context.Background()
+	mux := runtime.NewServeMux()
+
+	opts := []grpc.DialOption{grpc.WithInsecure()}
+	err := v1.RegisterSongServiceHandlerFromEndpoint(ctx, mux, grpc_addr, opts)
+	if err != nil {
+		log.Fatal(err)
+	}
+	if err := v1.RegisterAlbumServiceHandlerFromEndpoint(ctx, mux, grpc_addr, opts); err != nil {
+		log.Fatal(err)
+	}
+	if err := v1.RegisterArtistServiceHandlerFromEndpoint(ctx, mux, grpc_addr, opts); err != nil {
+		log.Fatal(err)
+	}
+	if err := v1.RegisterLabelServiceHandlerFromEndpoint(ctx, mux, grpc_addr, opts); err != nil {
+		log.Fatal(err)
+	}
+
+	log.Println("Starting grpc gateway server on: ", gw_addr)
+	http.ListenAndServe(gw_addr, mux)
+}
+
 func main() {
 	flag.Parse()
-	startGRPCServer(*addr)
+	go startGRPCServer(*addr)
+	startGatewayServer(*gw_addr, *addr)
 }

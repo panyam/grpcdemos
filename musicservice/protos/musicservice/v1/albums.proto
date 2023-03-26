@@ -5,36 +5,58 @@ option go_package = "music.com/musicservice/protos";
 package musicservice;
 
 import "models.proto";
+import "google/api/annotations.proto";
 
 /**
- * The main Album server, serving as an entry into managing album lifecycles
- * and retrieving them
+ * Album service for creating, listing, updating and deleting albums.
  */
 service AlbumService {
   /**
    * Create a new Album
    */
-  rpc CreateAlbum(CreateAlbumRequest) returns (CreateAlbumResponse) { }
+  rpc CreateAlbum(CreateAlbumRequest) returns (CreateAlbumResponse) {
+    option (google.api.http) = {
+      post: "/v1/albums",
+      body: "*",
+    };
+  }
 
   /**
    * Batch gets multiple albums.
    */
-  rpc GetAlbums(GetAlbumsRequest) returns (GetAlbumsResponse) { }
+  rpc GetAlbums(GetAlbumsRequest) returns (GetAlbumsResponse) { 
+    option (google.api.http) = {
+      get: "/v1/albums:batchGet",
+    };
+  }
 
   /**
    * Updates specific fields of an Album
    */
-  rpc UpdateAlbum(UpdateAlbumRequest) returns (UpdateAlbumResponse) { }
+  rpc UpdateAlbum(UpdateAlbumRequest) returns (UpdateAlbumResponse) { 
+    option (google.api.http) = {
+      patch: "/v1/albums/{album.id=*}"
+      body: "album"
+    };
+  }
 
   /**
    * Deletes an album from our system.
    */
-  rpc DeleteAlbum(DeleteAlbumRequest) returns (DeleteAlbumResponse) { }
+  rpc DeleteAlbum(DeleteAlbumRequest) returns (DeleteAlbumResponse) { 
+    option (google.api.http) = {
+      delete: "/v1/nodes/{id=*}"
+    };
+  }
 
   /**
    * Finds and retrieves albums matching the particular criteria.
    */
-  rpc ListAlbums(ListAlbumsRequest) returns (ListAlbumsResponse) { }
+  rpc ListAlbums(ListAlbumsRequest) returns (ListAlbumsResponse) { 
+    option (google.api.http) = {
+      get: "/v1/albums"
+    };
+  }
 }
 
 /**

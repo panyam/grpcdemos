@@ -5,36 +5,58 @@ option go_package = "music.com/musicservice/protos";
 package musicservice;
 
 import "models.proto";
+import "google/api/annotations.proto";
 
 /**
- * The main Artist server, serving as an entry into managing artist lifecycles
- * and retrieving them
+ * Artist service for creating, listing, updating and deleting artists.
  */
 service ArtistService {
   /**
    * Create a new Artist
    */
-  rpc CreateArtist(CreateArtistRequest) returns (CreateArtistResponse) { }
+  rpc CreateArtist(CreateArtistRequest) returns (CreateArtistResponse) {
+    option (google.api.http) = {
+      post: "/v1/artists",
+      body: "*",
+    };
+  }
 
   /**
    * Batch gets multiple artists.
    */
-  rpc GetArtists(GetArtistsRequest) returns (GetArtistsResponse) { }
+  rpc GetArtists(GetArtistsRequest) returns (GetArtistsResponse) { 
+    option (google.api.http) = {
+      get: "/v1/artists:batchGet",
+    };
+  }
 
   /**
    * Updates specific fields of an Artist
    */
-  rpc UpdateArtist(UpdateArtistRequest) returns (UpdateArtistResponse) { }
+  rpc UpdateArtist(UpdateArtistRequest) returns (UpdateArtistResponse) { 
+    option (google.api.http) = {
+      patch: "/v1/artists/{artist.id=*}"
+      body: "artist"
+    };
+  }
 
   /**
    * Deletes an artist from our system.
    */
-  rpc DeleteArtist(DeleteArtistRequest) returns (DeleteArtistResponse) { }
+  rpc DeleteArtist(DeleteArtistRequest) returns (DeleteArtistResponse) { 
+    option (google.api.http) = {
+      delete: "/v1/nodes/{id=*}"
+    };
+  }
 
   /**
    * Finds and retrieves artists matching the particular criteria.
    */
-  rpc ListArtists(ListArtistsRequest) returns (ListArtistsResponse) { }
+  rpc ListArtists(ListArtistsRequest) returns (ListArtistsResponse) { 
+    option (google.api.http) = {
+      get: "/v1/artists"
+    };
+  }
 }
 
 /**

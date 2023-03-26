@@ -8,8 +8,7 @@ import "models.proto";
 import "google/api/annotations.proto";
 
 /**
- * The main Song server, serving as an entry into managing song lifecycles
- * and retrieving them
+ * Song service for creating, listing, updating and deleting songs.
  */
 service SongService {
   /**

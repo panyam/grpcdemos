@@ -5,36 +5,58 @@ option go_package = "music.com/musicservice/protos";
 package musicservice;
 
 import "models.proto";
+import "google/api/annotations.proto";
 
 /**
- * The label service, serving as an entry into managing label lifecycles
- * and retrieving them
+ * Label service for creating, listing, updating and deleting labels.
  */
 service LabelService {
   /**
    * Create a new Label
    */
-  rpc CreateLabel(CreateLabelRequest) returns (CreateLabelResponse) { }
+  rpc CreateLabel(CreateLabelRequest) returns (CreateLabelResponse) {
+    option (google.api.http) = {
+      post: "/v1/labels",
+      body: "*",
+    };
+  }
 
   /**
    * Batch gets multiple labels.
    */
-  rpc GetLabels(GetLabelsRequest) returns (GetLabelsResponse) { }
+  rpc GetLabels(GetLabelsRequest) returns (GetLabelsResponse) { 
+    option (google.api.http) = {
+      get: "/v1/labels:batchGet",
+    };
+  }
 
   /**
    * Updates specific fields of an Label
    */
-  rpc UpdateLabel(UpdateLabelRequest) returns (UpdateLabelResponse) { }
+  rpc UpdateLabel(UpdateLabelRequest) returns (UpdateLabelResponse) { 
+    option (google.api.http) = {
+      patch: "/v1/labels/{label.id=*}"
+      body: "label"
+    };
+  }
 
   /**
    * Deletes an label from our system.
    */
-  rpc DeleteLabel(DeleteLabelRequest) returns (DeleteLabelResponse) { }
+  rpc DeleteLabel(DeleteLabelRequest) returns (DeleteLabelResponse) { 
+    option (google.api.http) = {
+      delete: "/v1/nodes/{id=*}"
+    };
+  }
 
   /**
    * Finds and retrieves labels matching the particular criteria.
    */
-  rpc ListLabels(ListLabelsRequest) returns (ListLabelsResponse) { }
+  rpc ListLabels(ListLabelsRequest) returns (ListLabelsResponse) { 
+    option (google.api.http) = {
+      get: "/v1/labels"
+    };
+  }
 
   /**
    * Add an album to this label.
