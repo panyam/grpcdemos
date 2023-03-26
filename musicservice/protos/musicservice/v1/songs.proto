@@ -5,6 +5,7 @@ option go_package = "music.com/musicservice/protos";
 package musicservice;
 
 import "models.proto";
+import "google/api/annotations.proto";
 
 /**
  * The main Song server, serving as an entry into managing song lifecycles
@@ -14,27 +15,49 @@ service SongService {
   /**
    * Create a new Song
    */
-  rpc CreateSong(CreateSongRequest) returns (CreateSongResponse) { }
+  rpc CreateSong(CreateSongRequest) returns (CreateSongResponse) {
+    option (google.api.http) = {
+      post: "/v1/songs",
+      body: "*",
+    };
+  }
 
   /**
    * Batch gets multiple songs.
    */
-  rpc GetSongs(GetSongsRequest) returns (GetSongsResponse) { }
+  rpc GetSongs(GetSongsRequest) returns (GetSongsResponse) { 
+    option (google.api.http) = {
+      get: "/v1/songs:batchGet",
+    };
+  }
 
   /**
    * Updates specific fields of an Song
    */
-  rpc UpdateSong(UpdateSongRequest) returns (UpdateSongResponse) { }
+  rpc UpdateSong(UpdateSongRequest) returns (UpdateSongResponse) { 
+    option (google.api.http) = {
+      patch: "/v1/songs/{song.id=*}"
+      body: "song"
+    };
+  }
 
   /**
    * Deletes an song from our system.
    */
-  rpc DeleteSong(DeleteSongRequest) returns (DeleteSongResponse) { }
+  rpc DeleteSong(DeleteSongRequest) returns (DeleteSongResponse) { 
+    option (google.api.http) = {
+      delete: "/v1/nodes/{id=*}"
+    };
+  }
 
   /**
    * Finds and retrieves songs matching the particular criteria.
    */
-  rpc ListSongs(ListSongsRequest) returns (ListSongsResponse) { }
+  rpc ListSongs(ListSongsRequest) returns (ListSongsResponse) { 
+    option (google.api.http) = {
+      get: "/v1/songs"
+    };
+  }
 }
 
 /**
