@@ -13,14 +13,23 @@ PROTO_DIR:=$(SRC_DIR)/protos
 # where we want to generate server stubs, clients etc
 OUT_DIR:=$(SRC_DIR)/gen/go/musicservice/v1
 
-all: printenv goprotos
+all: printenv goprotos gwprotos
 
 goprotos:
 	echo "Generating GO bindings"
 	rm -Rf $(OUT_DIR) && mkdir -p $(OUT_DIR)
 	protoc --go_out=$(OUT_DIR) --go_opt=paths=source_relative          	\
        --go-grpc_out=$(OUT_DIR) --go-grpc_opt=paths=source_relative		\
-       --proto_path=$(PROTO_DIR)/musicservice/v1/ 											\
+       --proto_path=$(PROTO_DIR)/musicservice/v1/ 										\
+      $(PROTO_DIR)/musicservice/v1/*.proto
+
+gwprotos:
+	echo "Generating gRPC Gateway bindings and OpenAPI spec"
+	protoc -I . --grpc-gateway_out $(OUT_DIR) 													\
+    --grpc-gateway_opt logtostderr=true 															\
+    --grpc-gateway_opt paths=source_relative 													\
+    --grpc-gateway_opt generate_unbound_methods=true 									\
+    --proto_path=$(PROTO_DIR)/musicservice/v1/ 												\
       $(PROTO_DIR)/musicservice/v1/*.proto
 
 printenv:
