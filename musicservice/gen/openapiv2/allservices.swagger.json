@@ -1,0 +1,1452 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "albums.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AlbumService"
+    },
+    {
+      "name": "ArtistService"
+    },
+    {
+      "name": "LabelService"
+    },
+    {
+      "name": "SongService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/musicservice.LabelService/AddAlbum": {
+      "post": {
+        "summary": "*\nAdd an album to this label.",
+        "operationId": "LabelService_AddAlbum",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceAddAlbumResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "*\nRequest to add an album to a label.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/musicserviceAddAlbumRequest"
+            }
+          }
+        ],
+        "tags": [
+          "LabelService"
+        ]
+      }
+    },
+    "/musicservice.LabelService/ListAlbums": {
+      "post": {
+        "summary": "*\nList all albums owned by this label.",
+        "operationId": "LabelService_ListAlbums",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceListAlbumsInLabelResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "*\nRequest object for an album listing.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/musicserviceListAlbumsInLabelRequest"
+            }
+          }
+        ],
+        "tags": [
+          "LabelService"
+        ]
+      }
+    },
+    "/musicservice.LabelService/RemoveAlbum": {
+      "post": {
+        "summary": "*\nRemove an album from this label.",
+        "operationId": "LabelService_RemoveAlbum",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceRemoveAlbumResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": "*\nRequest to remove an album to a label.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/musicserviceRemoveAlbumRequest"
+            }
+          }
+        ],
+        "tags": [
+          "LabelService"
+        ]
+      }
+    },
+    "/v1/albums": {
+      "get": {
+        "summary": "*\nFinds and retrieves albums matching the particular criteria.",
+        "operationId": "AlbumService_ListAlbums",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceListAlbumsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "pageKey",
+            "description": "*\nInstead of an offset an abstract  \"page\" key is provided that offers\nan opaque \"pointer\" into some offset in a result set.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "count",
+            "description": "*\nNumber of results to return.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "AlbumService"
+        ]
+      },
+      "post": {
+        "summary": "*\nCreate a new Album",
+        "operationId": "AlbumService_CreateAlbum",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceCreateAlbumResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/musicserviceCreateAlbumRequest"
+            }
+          }
+        ],
+        "tags": [
+          "AlbumService"
+        ]
+      }
+    },
+    "/v1/albums/{album.id}": {
+      "patch": {
+        "summary": "*\nUpdates specific fields of an Album",
+        "operationId": "AlbumService_UpdateAlbum",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceUpdateAlbumResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "album.id",
+            "description": "ID of the Album",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "[^/]+"
+          },
+          {
+            "name": "album",
+            "description": "*\nAlbum being updated",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "name": {
+                  "type": "string",
+                  "title": "Album name"
+                },
+                "songIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "title": "Songs performed in this album"
+                },
+                "venue": {
+                  "type": "string",
+                  "title": "Where this album was performed"
+                },
+                "releaseDate": {
+                  "type": "string",
+                  "format": "date-time",
+                  "title": "Date released on"
+                }
+              },
+              "title": "*\nAlbum being updated"
+            }
+          }
+        ],
+        "tags": [
+          "AlbumService"
+        ]
+      }
+    },
+    "/v1/albums:batchGet": {
+      "get": {
+        "summary": "*\nBatch gets multiple albums.",
+        "operationId": "AlbumService_GetAlbums",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceGetAlbumsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "tags": [
+          "AlbumService"
+        ]
+      }
+    },
+    "/v1/artists": {
+      "get": {
+        "summary": "*\nFinds and retrieves artists matching the particular criteria.",
+        "operationId": "ArtistService_ListArtists",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceListArtistsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "pageKey",
+            "description": "*\nInstead of an offset an abstract  \"page\" key is provided that offers\nan opaque \"pointer\" into some offset in a result set.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "count",
+            "description": "*\nNumber of results to return.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "ArtistService"
+        ]
+      },
+      "post": {
+        "summary": "*\nCreate a new Artist",
+        "operationId": "ArtistService_CreateArtist",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceCreateArtistResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/musicserviceCreateArtistRequest"
+            }
+          }
+        ],
+        "tags": [
+          "ArtistService"
+        ]
+      }
+    },
+    "/v1/artists/{artist.id}": {
+      "patch": {
+        "summary": "*\nUpdates specific fields of an Artist",
+        "operationId": "ArtistService_UpdateArtist",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceUpdateArtistResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "artist.id",
+            "description": "ID of the artist",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "[^/]+"
+          },
+          {
+            "name": "artist",
+            "description": "*\nArtist being updated",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "name": {
+                  "type": "string",
+                  "title": "Full name of the artist"
+                },
+                "dateOfBirth": {
+                  "type": "string",
+                  "format": "date-time",
+                  "title": "Artist's date of birth"
+                },
+                "country": {
+                  "type": "string",
+                  "title": "Country of residence"
+                }
+              },
+              "title": "*\nArtist being updated"
+            }
+          }
+        ],
+        "tags": [
+          "ArtistService"
+        ]
+      }
+    },
+    "/v1/artists:batchGet": {
+      "get": {
+        "summary": "*\nBatch gets multiple artists.",
+        "operationId": "ArtistService_GetArtists",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceGetArtistsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "tags": [
+          "ArtistService"
+        ]
+      }
+    },
+    "/v1/labels": {
+      "get": {
+        "summary": "*\nFinds and retrieves labels matching the particular criteria.",
+        "operationId": "LabelService_ListLabels",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceListLabelsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "pageKey",
+            "description": "*\nInstead of an offset an abstract  \"page\" key is provided that offers\nan opaque \"pointer\" into some offset in a result set.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "count",
+            "description": "*\nNumber of results to return.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "LabelService"
+        ]
+      },
+      "post": {
+        "summary": "*\nCreate a new Label",
+        "operationId": "LabelService_CreateLabel",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceCreateLabelResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/musicserviceCreateLabelRequest"
+            }
+          }
+        ],
+        "tags": [
+          "LabelService"
+        ]
+      }
+    },
+    "/v1/labels/{label.id}": {
+      "patch": {
+        "summary": "*\nUpdates specific fields of an Label",
+        "operationId": "LabelService_UpdateLabel",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceUpdateLabelResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "label.id",
+            "description": "ID of this label",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "[^/]+"
+          },
+          {
+            "name": "label",
+            "description": "*\nLabel being updated",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "name": {
+                  "type": "string",
+                  "title": "Name of this record label company (eg, \"Virgin Records\")"
+                },
+                "establishedDate": {
+                  "type": "string",
+                  "format": "date-time",
+                  "title": "When this company was established"
+                }
+              },
+              "title": "*\nLabel being updated"
+            }
+          }
+        ],
+        "tags": [
+          "LabelService"
+        ]
+      }
+    },
+    "/v1/labels:batchGet": {
+      "get": {
+        "summary": "*\nBatch gets multiple labels.",
+        "operationId": "LabelService_GetLabels",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceGetLabelsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "tags": [
+          "LabelService"
+        ]
+      }
+    },
+    "/v1/nodes/{id_1}": {
+      "delete": {
+        "summary": "*\nDeletes an artist from our system.",
+        "operationId": "ArtistService_DeleteArtist",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceDeleteArtistResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id_1",
+            "description": "*\nID of the artist to be deleted.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "[^/]+"
+          }
+        ],
+        "tags": [
+          "ArtistService"
+        ]
+      }
+    },
+    "/v1/nodes/{id_2}": {
+      "delete": {
+        "summary": "*\nDeletes an label from our system.",
+        "operationId": "LabelService_DeleteLabel",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceDeleteLabelResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id_2",
+            "description": "*\nID of the label to be deleted.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "[^/]+"
+          }
+        ],
+        "tags": [
+          "LabelService"
+        ]
+      }
+    },
+    "/v1/nodes/{id_3}": {
+      "delete": {
+        "summary": "*\nDeletes an song from our system.",
+        "operationId": "SongService_DeleteSong",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceDeleteSongResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id_3",
+            "description": "*\nID of the song to be deleted.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "[^/]+"
+          }
+        ],
+        "tags": [
+          "SongService"
+        ]
+      }
+    },
+    "/v1/nodes/{id}": {
+      "delete": {
+        "summary": "*\nDeletes an album from our system.",
+        "operationId": "AlbumService_DeleteAlbum",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceDeleteAlbumResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "description": "*\nID of the album to be deleted.",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "[^/]+"
+          }
+        ],
+        "tags": [
+          "AlbumService"
+        ]
+      }
+    },
+    "/v1/songs": {
+      "get": {
+        "summary": "*\nFinds and retrieves songs matching the particular criteria.",
+        "operationId": "SongService_ListSongs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceListSongsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "pageKey",
+            "description": "*\nInstead of an offset an abstract  \"page\" key is provided that offers\nan opaque \"pointer\" into some offset in a result set.",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "count",
+            "description": "*\nNumber of results to return.",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "tags": [
+          "SongService"
+        ]
+      },
+      "post": {
+        "summary": "*\nCreate a new Song",
+        "operationId": "SongService_CreateSong",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceCreateSongResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/musicserviceCreateSongRequest"
+            }
+          }
+        ],
+        "tags": [
+          "SongService"
+        ]
+      }
+    },
+    "/v1/songs/{song.id}": {
+      "patch": {
+        "summary": "*\nUpdates specific fields of an Song",
+        "operationId": "SongService_UpdateSong",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceUpdateSongResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "song.id",
+            "description": "ID of this song",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "pattern": "[^/]+"
+          },
+          {
+            "name": "song",
+            "description": "*\nSong being updated",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "name": {
+                  "type": "string",
+                  "title": "Name for this song"
+                },
+                "composerId": {
+                  "type": "string",
+                  "title": "ID of the composer/artist for this Song"
+                },
+                "homepage": {
+                  "type": "string",
+                  "title": "A homepage containing all other info about the Song"
+                },
+                "performerIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "title": "All performing artists for this song"
+                }
+              },
+              "title": "*\nSong being updated"
+            }
+          }
+        ],
+        "tags": [
+          "SongService"
+        ]
+      }
+    },
+    "/v1/songs:batchGet": {
+      "get": {
+        "summary": "*\nBatch gets multiple songs.",
+        "operationId": "SongService_GetSongs",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/musicserviceGetSongsResponse"
+            }
+          },
+          "default": {
+            "description": "An unexpected error response.",
+            "schema": {
+              "$ref": "#/definitions/rpcStatus"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "tags": [
+          "SongService"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "musicserviceAddAlbumRequest": {
+      "type": "object",
+      "properties": {
+        "labelId": {
+          "type": "string",
+          "description": "*\nLabel to add the album to."
+        },
+        "albumId": {
+          "type": "string",
+          "description": "*\nThe album to be added."
+        }
+      },
+      "description": "*\nRequest to add an album to a label."
+    },
+    "musicserviceAddAlbumResponse": {
+      "type": "object",
+      "title": "*\nResponse for an AddAlbum request"
+    },
+    "musicserviceAlbum": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string",
+          "title": "ID of the Album"
+        },
+        "name": {
+          "type": "string",
+          "title": "Album name"
+        },
+        "songIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Songs performed in this album"
+        },
+        "venue": {
+          "type": "string",
+          "title": "Where this album was performed"
+        },
+        "releaseDate": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Date released on"
+        }
+      },
+      "description": "Album showcasing a bunch of artists performing a bunch of songs."
+    },
+    "musicserviceArtist": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string",
+          "title": "ID of the artist"
+        },
+        "name": {
+          "type": "string",
+          "title": "Full name of the artist"
+        },
+        "dateOfBirth": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Artist's date of birth"
+        },
+        "country": {
+          "type": "string",
+          "title": "Country of residence"
+        }
+      },
+      "title": "Artists perform/play/sing songs"
+    },
+    "musicserviceCreateAlbumRequest": {
+      "type": "object",
+      "properties": {
+        "album": {
+          "$ref": "#/definitions/musicserviceAlbum",
+          "title": "*\nAlbum being updated"
+        }
+      },
+      "title": "*\nAlbum creation request object"
+    },
+    "musicserviceCreateAlbumResponse": {
+      "type": "object",
+      "properties": {
+        "album": {
+          "$ref": "#/definitions/musicserviceAlbum",
+          "title": "*\nAlbum being created"
+        }
+      },
+      "description": "*\nResponse of an album creation."
+    },
+    "musicserviceCreateArtistRequest": {
+      "type": "object",
+      "properties": {
+        "artist": {
+          "$ref": "#/definitions/musicserviceArtist",
+          "title": "*\nArtist being updated"
+        }
+      },
+      "title": "*\nArtist creation request object"
+    },
+    "musicserviceCreateArtistResponse": {
+      "type": "object",
+      "properties": {
+        "artist": {
+          "$ref": "#/definitions/musicserviceArtist",
+          "title": "*\nArtist being created"
+        }
+      },
+      "description": "*\nResponse of an artist creation."
+    },
+    "musicserviceCreateLabelRequest": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "$ref": "#/definitions/musicserviceLabel",
+          "title": "*\nLabel being updated"
+        }
+      },
+      "title": "*\nLabel creation request object"
+    },
+    "musicserviceCreateLabelResponse": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "$ref": "#/definitions/musicserviceLabel",
+          "title": "*\nLabel being created"
+        }
+      },
+      "description": "*\nResponse of an label creation."
+    },
+    "musicserviceCreateSongRequest": {
+      "type": "object",
+      "properties": {
+        "song": {
+          "$ref": "#/definitions/musicserviceSong",
+          "title": "*\nSong being updated"
+        }
+      },
+      "title": "*\nSong creation request object"
+    },
+    "musicserviceCreateSongResponse": {
+      "type": "object",
+      "properties": {
+        "song": {
+          "$ref": "#/definitions/musicserviceSong",
+          "title": "*\nSong being created"
+        }
+      },
+      "description": "*\nResponse of an song creation."
+    },
+    "musicserviceDeleteAlbumResponse": {
+      "type": "object",
+      "title": "*\nAlbum deletion response"
+    },
+    "musicserviceDeleteArtistResponse": {
+      "type": "object",
+      "title": "*\nArtist deletion response"
+    },
+    "musicserviceDeleteLabelResponse": {
+      "type": "object",
+      "title": "*\nLabel deletion response"
+    },
+    "musicserviceDeleteSongResponse": {
+      "type": "object",
+      "title": "*\nSong deletion response"
+    },
+    "musicserviceGetAlbumsResponse": {
+      "type": "object",
+      "properties": {
+        "albums": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/musicserviceAlbum"
+          },
+          "description": "*\nAlbums mapped by their ID."
+        }
+      },
+      "description": "*\nResponse for an album batch get."
+    },
+    "musicserviceGetArtistsResponse": {
+      "type": "object",
+      "properties": {
+        "artists": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/musicserviceArtist"
+          },
+          "description": "*\nArtists mapped by their ID."
+        }
+      },
+      "description": "*\nResponse for an artist batch get."
+    },
+    "musicserviceGetLabelsResponse": {
+      "type": "object",
+      "properties": {
+        "labels": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/musicserviceLabel"
+          },
+          "description": "*\nLabels mapped by their ID."
+        }
+      },
+      "description": "*\nResponse for an label batch get."
+    },
+    "musicserviceGetSongsResponse": {
+      "type": "object",
+      "properties": {
+        "songs": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/musicserviceSong"
+          },
+          "description": "*\nSongs mapped by their ID."
+        }
+      },
+      "description": "*\nResponse for an song batch get."
+    },
+    "musicserviceLabel": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string",
+          "title": "ID of this label"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name of this record label company (eg, \"Virgin Records\")"
+        },
+        "establishedDate": {
+          "type": "string",
+          "format": "date-time",
+          "title": "When this company was established"
+        }
+      },
+      "description": "A record label company.   This entity is the owner of albums as they produce and release them.\nNote unlike the Album entity the Label does not contain a (repeated) field of all albums it\nowns.   This is because the way the albums are added to or removed from a Label's collection\nis via the API."
+    },
+    "musicserviceListAlbumsInLabelRequest": {
+      "type": "object",
+      "properties": {
+        "pageKey": {
+          "type": "string",
+          "description": "*\nInstead of an offset an abstract  \"page\" key is provided that offers\nan opaque \"pointer\" into some offset in a result set."
+        },
+        "count": {
+          "type": "integer",
+          "format": "int32",
+          "description": "*\nNumber of results to return."
+        }
+      },
+      "description": "*\nRequest object for an album listing."
+    },
+    "musicserviceListAlbumsInLabelResponse": {
+      "type": "object",
+      "properties": {
+        "albums": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/musicserviceAlbum"
+          },
+          "description": "*\nList of albums."
+        },
+        "nextPageKey": {
+          "type": "string",
+          "description": "*\nThe key/pointer string that subsequent List requests should pass to\ncontinue the pagination."
+        }
+      },
+      "description": "*\nResponse for listing albums in a label."
+    },
+    "musicserviceListAlbumsResponse": {
+      "type": "object",
+      "properties": {
+        "albums": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/musicserviceAlbum"
+          },
+          "description": "*\nThe list of albums found as part of this response."
+        },
+        "nextPageKey": {
+          "type": "string",
+          "description": "*\nThe key/pointer string that subsequent List requests should pass to\ncontinue the pagination."
+        }
+      },
+      "description": "*\nResponse of a album search/listing."
+    },
+    "musicserviceListArtistsResponse": {
+      "type": "object",
+      "properties": {
+        "artists": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/musicserviceArtist"
+          },
+          "description": "*\nThe list of artists found as part of this response."
+        },
+        "nextPageKey": {
+          "type": "string",
+          "description": "*\nThe key/pointer string that subsequent List requests should pass to\ncontinue the pagination."
+        }
+      },
+      "description": "*\nResponse of a artist search/listing."
+    },
+    "musicserviceListLabelsResponse": {
+      "type": "object",
+      "properties": {
+        "labels": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/musicserviceLabel"
+          },
+          "description": "*\nThe list of labels found as part of this response."
+        },
+        "nextPageKey": {
+          "type": "string",
+          "description": "*\nThe key/pointer string that subsequent List requests should pass to\ncontinue the pagination."
+        }
+      },
+      "description": "*\nResponse of a label search/listing."
+    },
+    "musicserviceListSongsResponse": {
+      "type": "object",
+      "properties": {
+        "songs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/musicserviceSong"
+          },
+          "description": "*\nThe list of songs found as part of this response."
+        },
+        "nextPageKey": {
+          "type": "string",
+          "description": "*\nThe key/pointer string that subsequent List requests should pass to\ncontinue the pagination."
+        }
+      },
+      "description": "*\nResponse of a song search/listing."
+    },
+    "musicserviceRemoveAlbumRequest": {
+      "type": "object",
+      "properties": {
+        "labelId": {
+          "type": "string",
+          "description": "*\nLabel to remove the album to."
+        },
+        "albumId": {
+          "type": "string",
+          "description": "*\nThe album to be removeed."
+        }
+      },
+      "description": "*\nRequest to remove an album to a label."
+    },
+    "musicserviceRemoveAlbumResponse": {
+      "type": "object",
+      "title": "*\nResponse for an RemoveAlbum request"
+    },
+    "musicserviceSong": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string",
+          "title": "ID of this song"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name for this song"
+        },
+        "composerId": {
+          "type": "string",
+          "title": "ID of the composer/artist for this Song"
+        },
+        "homepage": {
+          "type": "string",
+          "title": "A homepage containing all other info about the Song"
+        },
+        "performerIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "All performing artists for this song"
+        }
+      },
+      "title": "A song - eg Jingle Bells"
+    },
+    "musicserviceUpdateAlbumResponse": {
+      "type": "object",
+      "properties": {
+        "album": {
+          "$ref": "#/definitions/musicserviceAlbum",
+          "title": "*\nAlbum being updated"
+        }
+      },
+      "description": "*\nThe request for (partially) updating an Album."
+    },
+    "musicserviceUpdateArtistResponse": {
+      "type": "object",
+      "properties": {
+        "artist": {
+          "$ref": "#/definitions/musicserviceArtist",
+          "title": "*\nArtist being updated"
+        }
+      },
+      "description": "*\nThe request for (partially) updating an Artist."
+    },
+    "musicserviceUpdateLabelResponse": {
+      "type": "object",
+      "properties": {
+        "label": {
+          "$ref": "#/definitions/musicserviceLabel",
+          "title": "*\nLabel being updated"
+        }
+      },
+      "description": "*\nThe request for (partially) updating an Label."
+    },
+    "musicserviceUpdateSongResponse": {
+      "type": "object",
+      "properties": {
+        "song": {
+          "$ref": "#/definitions/musicserviceSong",
+          "title": "*\nSong being updated"
+        }
+      },
+      "description": "*\nThe request for (partially) updating an Song."
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}
