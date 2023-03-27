@@ -15,17 +15,6 @@ OUT_DIR:=$(SRC_DIR)/gen/go
 
 all: createdirs printenv goprotos gwprotos openapiv2 cleanvendors
 
-createdirs:
-	rm -Rf $(OUT_DIR)
-	mkdir -p $(OUT_DIR)
-	mkdir -p $(SRC_DIR)/gen/openapiv2
-	cd $(PROTO_DIR) && (																							\
- 		if [ !-d google ]; then ln -s $(SRC_DIR)/vendors/google . ; fi	\
-	)
-
-cleanvendors:
-	rm -f $(PROTO_DIR)/google
-
 goprotos:
 	echo "Generating GO bindings"
 	protoc --go_out=$(OUT_DIR) --go_opt=paths=source_relative          	\
@@ -60,3 +49,14 @@ printenv:
 	@echo GOROOT=$(GOROOT)
 	@echo GOPATH=$(GOPATH)
 	@echo GOBIN=$(GOBIN)
+
+createdirs:
+	rm -Rf $(OUT_DIR)
+	mkdir -p $(OUT_DIR)
+	mkdir -p $(SRC_DIR)/gen/openapiv2
+	cd $(PROTO_DIR) && (																							\
+ 		if [ !-d google ]; then ln -s $(SRC_DIR)/vendors/google . ; fi	\
+	)
+
+cleanvendors:
+	rm -f $(PROTO_DIR)/google
