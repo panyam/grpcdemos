@@ -13,7 +13,7 @@ PROTO_DIR:=$(SRC_DIR)/protos
 # where we want to generate server stubs, clients etc
 OUT_DIR:=$(SRC_DIR)/gen/go
 
-all: createdirs printenv goprotos gwprotos openapiv2 cleandirs
+all: createdirs printenv goprotos gwprotos openapiv2 cleanvendors
 
 goprotos:
 	echo "Generating GO bindings"
