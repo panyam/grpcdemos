@@ -4,7 +4,7 @@ import "google/protobuf/field_mask.proto";
 option go_package = "music.com/musicservice/protos";
 package musicservice;
 
-import "models.proto";
+import "musicservice/v1/models.proto";
 
 /**
  * The main Album server, serving as an entry into managing album lifecycles

@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.30.0
 // 	protoc        v3.21.12
-// source: models.proto
+// source: musicservice/v1/models.proto
 
 package protos
 
@@ -44,7 +44,7 @@ type Song struct {
 func (x *Song) Reset() {
 	*x = Song{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_models_proto_msgTypes[0]
+		mi := &file_musicservice_v1_models_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -57,7 +57,7 @@ func (x *Song) String() string {
 func (*Song) ProtoMessage() {}
 
 func (x *Song) ProtoReflect() protoreflect.Message {
-	mi := &file_models_proto_msgTypes[0]
+	mi := &file_musicservice_v1_models_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -70,7 +70,7 @@ func (x *Song) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Song.ProtoReflect.Descriptor instead.
 func (*Song) Descriptor() ([]byte, []int) {
-	return file_models_proto_rawDescGZIP(), []int{0}
+	return file_musicservice_v1_models_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Song) GetCreatedAt() *timestamppb.Timestamp {
@@ -143,7 +143,7 @@ type Artist struct {
 func (x *Artist) Reset() {
 	*x = Artist{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_models_proto_msgTypes[1]
+		mi := &file_musicservice_v1_models_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -156,7 +156,7 @@ func (x *Artist) String() string {
 func (*Artist) ProtoMessage() {}
 
 func (x *Artist) ProtoReflect() protoreflect.Message {
-	mi := &file_models_proto_msgTypes[1]
+	mi := &file_musicservice_v1_models_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -169,7 +169,7 @@ func (x *Artist) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Artist.ProtoReflect.Descriptor instead.
 func (*Artist) Descriptor() ([]byte, []int) {
-	return file_models_proto_rawDescGZIP(), []int{1}
+	return file_musicservice_v1_models_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *Artist) GetCreatedAt() *timestamppb.Timestamp {
@@ -237,7 +237,7 @@ type Album struct {
 func (x *Album) Reset() {
 	*x = Album{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_models_proto_msgTypes[2]
+		mi := &file_musicservice_v1_models_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -250,7 +250,7 @@ func (x *Album) String() string {
 func (*Album) ProtoMessage() {}
 
 func (x *Album) ProtoReflect() protoreflect.Message {
-	mi := &file_models_proto_msgTypes[2]
+	mi := &file_musicservice_v1_models_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -263,7 +263,7 @@ func (x *Album) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Album.ProtoReflect.Descriptor instead.
 func (*Album) Descriptor() ([]byte, []int) {
-	return file_models_proto_rawDescGZIP(), []int{2}
+	return file_musicservice_v1_models_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Album) GetCreatedAt() *timestamppb.Timestamp {
@@ -337,7 +337,7 @@ type Label struct {
 func (x *Label) Reset() {
 	*x = Label{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_models_proto_msgTypes[3]
+		mi := &file_musicservice_v1_models_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -350,7 +350,7 @@ func (x *Label) String() string {
 func (*Label) ProtoMessage() {}
 
 func (x *Label) ProtoReflect() protoreflect.Message {
-	mi := &file_models_proto_msgTypes[3]
+	mi := &file_musicservice_v1_models_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -363,7 +363,7 @@ func (x *Label) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Label.ProtoReflect.Descriptor instead.
 func (*Label) Descriptor() ([]byte, []int) {
-	return file_models_proto_rawDescGZIP(), []int{3}
+	return file_musicservice_v1_models_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Label) GetCreatedAt() *timestamppb.Timestamp {
@@ -401,10 +401,11 @@ func (x *Label) GetEstablishedDate() *timestamppb.Timestamp {
 	return nil
 }
 
-var File_models_proto protoreflect.FileDescriptor
+var File_musicservice_v1_models_proto protoreflect.FileDescriptor
 
-var file_models_proto_rawDesc = []byte{
-	0x0a, 0x0c, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0c,
+var file_musicservice_v1_models_proto_rawDesc = []byte{
+	0x0a, 0x1c, 0x6d, 0x75, 0x73, 0x69, 0x63, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x76,
+	0x31, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0c,
 	0x6d, 0x75, 0x73, 0x69, 0x63, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x1a, 0x1f, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x74, 0x69,
 	0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x82, 0x02,
@@ -478,26 +479,26 @@ var file_models_proto_rawDesc = []byte{
 }
 
 var (
-	file_models_proto_rawDescOnce sync.Once
-	file_models_proto_rawDescData = file_models_proto_rawDesc
+	file_musicservice_v1_models_proto_rawDescOnce sync.Once
+	file_musicservice_v1_models_proto_rawDescData = file_musicservice_v1_models_proto_rawDesc
 )
 
-func file_models_proto_rawDescGZIP() []byte {
-	file_models_proto_rawDescOnce.Do(func() {
-		file_models_proto_rawDescData = protoimpl.X.CompressGZIP(file_models_proto_rawDescData)
+func file_musicservice_v1_models_proto_rawDescGZIP() []byte {
+	file_musicservice_v1_models_proto_rawDescOnce.Do(func() {
+		file_musicservice_v1_models_proto_rawDescData = protoimpl.X.CompressGZIP(file_musicservice_v1_models_proto_rawDescData)
 	})
-	return file_models_proto_rawDescData
+	return file_musicservice_v1_models_proto_rawDescData
 }
 
-var file_models_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_models_proto_goTypes = []interface{}{
+var file_musicservice_v1_models_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_musicservice_v1_models_proto_goTypes = []interface{}{
 	(*Song)(nil),                  // 0: musicservice.Song
 	(*Artist)(nil),                // 1: musicservice.Artist
 	(*Album)(nil),                 // 2: musicservice.Album
 	(*Label)(nil),                 // 3: musicservice.Label
 	(*timestamppb.Timestamp)(nil), // 4: google.protobuf.Timestamp
 }
-var file_models_proto_depIdxs = []int32{
+var file_musicservice_v1_models_proto_depIdxs = []int32{
 	4,  // 0: musicservice.Song.created_at:type_name -> google.protobuf.Timestamp
 	4,  // 1: musicservice.Song.updated_at:type_name -> google.protobuf.Timestamp
 	4,  // 2: musicservice.Artist.created_at:type_name -> google.protobuf.Timestamp
@@ -516,13 +517,13 @@ var file_models_proto_depIdxs = []int32{
 	0,  // [0:11] is the sub-list for field type_name
 }
 
-func init() { file_models_proto_init() }
-func file_models_proto_init() {
-	if File_models_proto != nil {
+func init() { file_musicservice_v1_models_proto_init() }
+func file_musicservice_v1_models_proto_init() {
+	if File_musicservice_v1_models_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_models_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_models_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Song); i {
 			case 0:
 				return &v.state
@@ -534,7 +535,7 @@ func file_models_proto_init() {
 				return nil
 			}
 		}
-		file_models_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_models_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Artist); i {
 			case 0:
 				return &v.state
@@ -546,7 +547,7 @@ func file_models_proto_init() {
 				return nil
 			}
 		}
-		file_models_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_models_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Album); i {
 			case 0:
 				return &v.state
@@ -558,7 +559,7 @@ func file_models_proto_init() {
 				return nil
 			}
 		}
-		file_models_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_models_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Label); i {
 			case 0:
 				return &v.state
@@ -575,18 +576,18 @@ func file_models_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_models_proto_rawDesc,
+			RawDescriptor: file_musicservice_v1_models_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_models_proto_goTypes,
-		DependencyIndexes: file_models_proto_depIdxs,
-		MessageInfos:      file_models_proto_msgTypes,
+		GoTypes:           file_musicservice_v1_models_proto_goTypes,
+		DependencyIndexes: file_musicservice_v1_models_proto_depIdxs,
+		MessageInfos:      file_musicservice_v1_models_proto_msgTypes,
 	}.Build()
-	File_models_proto = out.File
-	file_models_proto_rawDesc = nil
-	file_models_proto_goTypes = nil
-	file_models_proto_depIdxs = nil
+	File_musicservice_v1_models_proto = out.File
+	file_musicservice_v1_models_proto_rawDesc = nil
+	file_musicservice_v1_models_proto_goTypes = nil
+	file_musicservice_v1_models_proto_depIdxs = nil
 }
