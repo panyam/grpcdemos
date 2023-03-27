@@ -55,7 +55,7 @@ createdirs:
 	mkdir -p $(OUT_DIR)
 	mkdir -p $(SRC_DIR)/gen/openapiv2
 	cd $(PROTO_DIR) && (																							\
- 		if [ !-d google ]; then ln -s $(SRC_DIR)/vendors/google . ; fi	\
+ 		if [ ! -d google ]; then ln -s $(SRC_DIR)/vendors/google . ; fi	\
 	)
 
 cleanvendors:
