@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.30.0
 // 	protoc        v3.21.12
-// source: songs.proto
+// source: musicservice/v1/songs.proto
 
 package protos
 
@@ -37,7 +37,7 @@ type CreateSongRequest struct {
 func (x *CreateSongRequest) Reset() {
 	*x = CreateSongRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_songs_proto_msgTypes[0]
+		mi := &file_musicservice_v1_songs_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -50,7 +50,7 @@ func (x *CreateSongRequest) String() string {
 func (*CreateSongRequest) ProtoMessage() {}
 
 func (x *CreateSongRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_songs_proto_msgTypes[0]
+	mi := &file_musicservice_v1_songs_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -63,7 +63,7 @@ func (x *CreateSongRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateSongRequest.ProtoReflect.Descriptor instead.
 func (*CreateSongRequest) Descriptor() ([]byte, []int) {
-	return file_songs_proto_rawDescGZIP(), []int{0}
+	return file_musicservice_v1_songs_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateSongRequest) GetSong() *Song {
@@ -88,7 +88,7 @@ type CreateSongResponse struct {
 func (x *CreateSongResponse) Reset() {
 	*x = CreateSongResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_songs_proto_msgTypes[1]
+		mi := &file_musicservice_v1_songs_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -101,7 +101,7 @@ func (x *CreateSongResponse) String() string {
 func (*CreateSongResponse) ProtoMessage() {}
 
 func (x *CreateSongResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_songs_proto_msgTypes[1]
+	mi := &file_musicservice_v1_songs_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -114,7 +114,7 @@ func (x *CreateSongResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateSongResponse.ProtoReflect.Descriptor instead.
 func (*CreateSongResponse) Descriptor() ([]byte, []int) {
-	return file_songs_proto_rawDescGZIP(), []int{1}
+	return file_musicservice_v1_songs_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreateSongResponse) GetSong() *Song {
@@ -142,7 +142,7 @@ type UpdateSongRequest struct {
 func (x *UpdateSongRequest) Reset() {
 	*x = UpdateSongRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_songs_proto_msgTypes[2]
+		mi := &file_musicservice_v1_songs_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -155,7 +155,7 @@ func (x *UpdateSongRequest) String() string {
 func (*UpdateSongRequest) ProtoMessage() {}
 
 func (x *UpdateSongRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_songs_proto_msgTypes[2]
+	mi := &file_musicservice_v1_songs_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -168,7 +168,7 @@ func (x *UpdateSongRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSongRequest.ProtoReflect.Descriptor instead.
 func (*UpdateSongRequest) Descriptor() ([]byte, []int) {
-	return file_songs_proto_rawDescGZIP(), []int{2}
+	return file_musicservice_v1_songs_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *UpdateSongRequest) GetSong() *Song {
@@ -200,7 +200,7 @@ type UpdateSongResponse struct {
 func (x *UpdateSongResponse) Reset() {
 	*x = UpdateSongResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_songs_proto_msgTypes[3]
+		mi := &file_musicservice_v1_songs_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -213,7 +213,7 @@ func (x *UpdateSongResponse) String() string {
 func (*UpdateSongResponse) ProtoMessage() {}
 
 func (x *UpdateSongResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_songs_proto_msgTypes[3]
+	mi := &file_musicservice_v1_songs_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -226,7 +226,7 @@ func (x *UpdateSongResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSongResponse.ProtoReflect.Descriptor instead.
 func (*UpdateSongResponse) Descriptor() ([]byte, []int) {
-	return file_songs_proto_rawDescGZIP(), []int{3}
+	return file_musicservice_v1_songs_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *UpdateSongResponse) GetSong() *Song {
@@ -249,7 +249,7 @@ type GetSongsRequest struct {
 func (x *GetSongsRequest) Reset() {
 	*x = GetSongsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_songs_proto_msgTypes[4]
+		mi := &file_musicservice_v1_songs_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -262,7 +262,7 @@ func (x *GetSongsRequest) String() string {
 func (*GetSongsRequest) ProtoMessage() {}
 
 func (x *GetSongsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_songs_proto_msgTypes[4]
+	mi := &file_musicservice_v1_songs_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -275,7 +275,7 @@ func (x *GetSongsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSongsRequest.ProtoReflect.Descriptor instead.
 func (*GetSongsRequest) Descriptor() ([]byte, []int) {
-	return file_songs_proto_rawDescGZIP(), []int{4}
+	return file_musicservice_v1_songs_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetSongsRequest) GetIds() []string {
@@ -300,7 +300,7 @@ type GetSongsResponse struct {
 func (x *GetSongsResponse) Reset() {
 	*x = GetSongsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_songs_proto_msgTypes[5]
+		mi := &file_musicservice_v1_songs_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -313,7 +313,7 @@ func (x *GetSongsResponse) String() string {
 func (*GetSongsResponse) ProtoMessage() {}
 
 func (x *GetSongsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_songs_proto_msgTypes[5]
+	mi := &file_musicservice_v1_songs_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -326,7 +326,7 @@ func (x *GetSongsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetSongsResponse.ProtoReflect.Descriptor instead.
 func (*GetSongsResponse) Descriptor() ([]byte, []int) {
-	return file_songs_proto_rawDescGZIP(), []int{5}
+	return file_musicservice_v1_songs_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetSongsResponse) GetSongs() map[string]*Song {
@@ -355,7 +355,7 @@ type ListSongsRequest struct {
 func (x *ListSongsRequest) Reset() {
 	*x = ListSongsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_songs_proto_msgTypes[6]
+		mi := &file_musicservice_v1_songs_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -368,7 +368,7 @@ func (x *ListSongsRequest) String() string {
 func (*ListSongsRequest) ProtoMessage() {}
 
 func (x *ListSongsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_songs_proto_msgTypes[6]
+	mi := &file_musicservice_v1_songs_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -381,7 +381,7 @@ func (x *ListSongsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSongsRequest.ProtoReflect.Descriptor instead.
 func (*ListSongsRequest) Descriptor() ([]byte, []int) {
-	return file_songs_proto_rawDescGZIP(), []int{6}
+	return file_musicservice_v1_songs_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ListSongsRequest) GetPageKey() string {
@@ -417,7 +417,7 @@ type ListSongsResponse struct {
 func (x *ListSongsResponse) Reset() {
 	*x = ListSongsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_songs_proto_msgTypes[7]
+		mi := &file_musicservice_v1_songs_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -430,7 +430,7 @@ func (x *ListSongsResponse) String() string {
 func (*ListSongsResponse) ProtoMessage() {}
 
 func (x *ListSongsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_songs_proto_msgTypes[7]
+	mi := &file_musicservice_v1_songs_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +443,7 @@ func (x *ListSongsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSongsResponse.ProtoReflect.Descriptor instead.
 func (*ListSongsResponse) Descriptor() ([]byte, []int) {
-	return file_songs_proto_rawDescGZIP(), []int{7}
+	return file_musicservice_v1_songs_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ListSongsResponse) GetSongs() []*Song {
@@ -475,7 +475,7 @@ type DeleteSongRequest struct {
 func (x *DeleteSongRequest) Reset() {
 	*x = DeleteSongRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_songs_proto_msgTypes[8]
+		mi := &file_musicservice_v1_songs_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -488,7 +488,7 @@ func (x *DeleteSongRequest) String() string {
 func (*DeleteSongRequest) ProtoMessage() {}
 
 func (x *DeleteSongRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_songs_proto_msgTypes[8]
+	mi := &file_musicservice_v1_songs_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -501,7 +501,7 @@ func (x *DeleteSongRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteSongRequest.ProtoReflect.Descriptor instead.
 func (*DeleteSongRequest) Descriptor() ([]byte, []int) {
-	return file_songs_proto_rawDescGZIP(), []int{8}
+	return file_musicservice_v1_songs_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteSongRequest) GetId() string {
@@ -522,7 +522,7 @@ type DeleteSongResponse struct {
 func (x *DeleteSongResponse) Reset() {
 	*x = DeleteSongResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_songs_proto_msgTypes[9]
+		mi := &file_musicservice_v1_songs_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -535,7 +535,7 @@ func (x *DeleteSongResponse) String() string {
 func (*DeleteSongResponse) ProtoMessage() {}
 
 func (x *DeleteSongResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_songs_proto_msgTypes[9]
+	mi := &file_musicservice_v1_songs_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -548,16 +548,18 @@ func (x *DeleteSongResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteSongResponse.ProtoReflect.Descriptor instead.
 func (*DeleteSongResponse) Descriptor() ([]byte, []int) {
-	return file_songs_proto_rawDescGZIP(), []int{9}
+	return file_musicservice_v1_songs_proto_rawDescGZIP(), []int{9}
 }
 
-var File_songs_proto protoreflect.FileDescriptor
+var File_musicservice_v1_songs_proto protoreflect.FileDescriptor
 
-var file_songs_proto_rawDesc = []byte{
-	0x0a, 0x0b, 0x73, 0x6f, 0x6e, 0x67, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0c, 0x6d,
+var file_musicservice_v1_songs_proto_rawDesc = []byte{
+	0x0a, 0x1b, 0x6d, 0x75, 0x73, 0x69, 0x63, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x76,
+	0x31, 0x2f, 0x73, 0x6f, 0x6e, 0x67, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0c, 0x6d,
 	0x75, 0x73, 0x69, 0x63, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x1a, 0x20, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x66, 0x69, 0x65,
-	0x6c, 0x64, 0x5f, 0x6d, 0x61, 0x73, 0x6b, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x0c, 0x6d,
+	0x6c, 0x64, 0x5f, 0x6d, 0x61, 0x73, 0x6b, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x6d,
+	0x75, 0x73, 0x69, 0x63, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x76, 0x31, 0x2f, 0x6d,
 	0x6f, 0x64, 0x65, 0x6c, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67, 0x6f, 0x6f,
 	0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69,
 	0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x3b, 0x0a, 0x11, 0x43, 0x72, 0x65,
@@ -647,19 +649,19 @@ var file_songs_proto_rawDesc = []byte{
 }
 
 var (
-	file_songs_proto_rawDescOnce sync.Once
-	file_songs_proto_rawDescData = file_songs_proto_rawDesc
+	file_musicservice_v1_songs_proto_rawDescOnce sync.Once
+	file_musicservice_v1_songs_proto_rawDescData = file_musicservice_v1_songs_proto_rawDesc
 )
 
-func file_songs_proto_rawDescGZIP() []byte {
-	file_songs_proto_rawDescOnce.Do(func() {
-		file_songs_proto_rawDescData = protoimpl.X.CompressGZIP(file_songs_proto_rawDescData)
+func file_musicservice_v1_songs_proto_rawDescGZIP() []byte {
+	file_musicservice_v1_songs_proto_rawDescOnce.Do(func() {
+		file_musicservice_v1_songs_proto_rawDescData = protoimpl.X.CompressGZIP(file_musicservice_v1_songs_proto_rawDescData)
 	})
-	return file_songs_proto_rawDescData
+	return file_musicservice_v1_songs_proto_rawDescData
 }
 
-var file_songs_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_songs_proto_goTypes = []interface{}{
+var file_musicservice_v1_songs_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_musicservice_v1_songs_proto_goTypes = []interface{}{
 	(*CreateSongRequest)(nil),     // 0: musicservice.CreateSongRequest
 	(*CreateSongResponse)(nil),    // 1: musicservice.CreateSongResponse
 	(*UpdateSongRequest)(nil),     // 2: musicservice.UpdateSongRequest
@@ -674,7 +676,7 @@ var file_songs_proto_goTypes = []interface{}{
 	(*Song)(nil),                  // 11: musicservice.Song
 	(*fieldmaskpb.FieldMask)(nil), // 12: google.protobuf.FieldMask
 }
-var file_songs_proto_depIdxs = []int32{
+var file_musicservice_v1_songs_proto_depIdxs = []int32{
 	11, // 0: musicservice.CreateSongRequest.song:type_name -> musicservice.Song
 	11, // 1: musicservice.CreateSongResponse.song:type_name -> musicservice.Song
 	11, // 2: musicservice.UpdateSongRequest.song:type_name -> musicservice.Song
@@ -700,14 +702,14 @@ var file_songs_proto_depIdxs = []int32{
 	0,  // [0:8] is the sub-list for field type_name
 }
 
-func init() { file_songs_proto_init() }
-func file_songs_proto_init() {
-	if File_songs_proto != nil {
+func init() { file_musicservice_v1_songs_proto_init() }
+func file_musicservice_v1_songs_proto_init() {
+	if File_musicservice_v1_songs_proto != nil {
 		return
 	}
-	file_models_proto_init()
+	file_musicservice_v1_models_proto_init()
 	if !protoimpl.UnsafeEnabled {
-		file_songs_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_songs_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateSongRequest); i {
 			case 0:
 				return &v.state
@@ -719,7 +721,7 @@ func file_songs_proto_init() {
 				return nil
 			}
 		}
-		file_songs_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_songs_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateSongResponse); i {
 			case 0:
 				return &v.state
@@ -731,7 +733,7 @@ func file_songs_proto_init() {
 				return nil
 			}
 		}
-		file_songs_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_songs_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateSongRequest); i {
 			case 0:
 				return &v.state
@@ -743,7 +745,7 @@ func file_songs_proto_init() {
 				return nil
 			}
 		}
-		file_songs_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_songs_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateSongResponse); i {
 			case 0:
 				return &v.state
@@ -755,7 +757,7 @@ func file_songs_proto_init() {
 				return nil
 			}
 		}
-		file_songs_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_songs_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetSongsRequest); i {
 			case 0:
 				return &v.state
@@ -767,7 +769,7 @@ func file_songs_proto_init() {
 				return nil
 			}
 		}
-		file_songs_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_songs_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetSongsResponse); i {
 			case 0:
 				return &v.state
@@ -779,7 +781,7 @@ func file_songs_proto_init() {
 				return nil
 			}
 		}
-		file_songs_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_songs_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListSongsRequest); i {
 			case 0:
 				return &v.state
@@ -791,7 +793,7 @@ func file_songs_proto_init() {
 				return nil
 			}
 		}
-		file_songs_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_songs_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListSongsResponse); i {
 			case 0:
 				return &v.state
@@ -803,7 +805,7 @@ func file_songs_proto_init() {
 				return nil
 			}
 		}
-		file_songs_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_songs_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteSongRequest); i {
 			case 0:
 				return &v.state
@@ -815,7 +817,7 @@ func file_songs_proto_init() {
 				return nil
 			}
 		}
-		file_songs_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_songs_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteSongResponse); i {
 			case 0:
 				return &v.state
@@ -832,18 +834,18 @@ func file_songs_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_songs_proto_rawDesc,
+			RawDescriptor: file_musicservice_v1_songs_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_songs_proto_goTypes,
-		DependencyIndexes: file_songs_proto_depIdxs,
-		MessageInfos:      file_songs_proto_msgTypes,
+		GoTypes:           file_musicservice_v1_songs_proto_goTypes,
+		DependencyIndexes: file_musicservice_v1_songs_proto_depIdxs,
+		MessageInfos:      file_musicservice_v1_songs_proto_msgTypes,
 	}.Build()
-	File_songs_proto = out.File
-	file_songs_proto_rawDesc = nil
-	file_songs_proto_goTypes = nil
-	file_songs_proto_depIdxs = nil
+	File_musicservice_v1_songs_proto = out.File
+	file_musicservice_v1_songs_proto_rawDesc = nil
+	file_musicservice_v1_songs_proto_goTypes = nil
+	file_musicservice_v1_songs_proto_depIdxs = nil
 }

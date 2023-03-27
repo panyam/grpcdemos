@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v3.21.12
-// source: albums.proto
+// source: musicservice/v1/albums.proto
 
 package protos
 
@@ -273,5 +273,5 @@ var AlbumService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "albums.proto",
+	Metadata: "musicservice/v1/albums.proto",
 }

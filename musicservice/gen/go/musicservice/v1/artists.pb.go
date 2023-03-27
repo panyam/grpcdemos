@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.30.0
 // 	protoc        v3.21.12
-// source: artists.proto
+// source: musicservice/v1/artists.proto
 
 package protos
 
@@ -37,7 +37,7 @@ type CreateArtistRequest struct {
 func (x *CreateArtistRequest) Reset() {
 	*x = CreateArtistRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_artists_proto_msgTypes[0]
+		mi := &file_musicservice_v1_artists_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -50,7 +50,7 @@ func (x *CreateArtistRequest) String() string {
 func (*CreateArtistRequest) ProtoMessage() {}
 
 func (x *CreateArtistRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_artists_proto_msgTypes[0]
+	mi := &file_musicservice_v1_artists_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -63,7 +63,7 @@ func (x *CreateArtistRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateArtistRequest.ProtoReflect.Descriptor instead.
 func (*CreateArtistRequest) Descriptor() ([]byte, []int) {
-	return file_artists_proto_rawDescGZIP(), []int{0}
+	return file_musicservice_v1_artists_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateArtistRequest) GetArtist() *Artist {
@@ -88,7 +88,7 @@ type CreateArtistResponse struct {
 func (x *CreateArtistResponse) Reset() {
 	*x = CreateArtistResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_artists_proto_msgTypes[1]
+		mi := &file_musicservice_v1_artists_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -101,7 +101,7 @@ func (x *CreateArtistResponse) String() string {
 func (*CreateArtistResponse) ProtoMessage() {}
 
 func (x *CreateArtistResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_artists_proto_msgTypes[1]
+	mi := &file_musicservice_v1_artists_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -114,7 +114,7 @@ func (x *CreateArtistResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateArtistResponse.ProtoReflect.Descriptor instead.
 func (*CreateArtistResponse) Descriptor() ([]byte, []int) {
-	return file_artists_proto_rawDescGZIP(), []int{1}
+	return file_musicservice_v1_artists_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreateArtistResponse) GetArtist() *Artist {
@@ -142,7 +142,7 @@ type UpdateArtistRequest struct {
 func (x *UpdateArtistRequest) Reset() {
 	*x = UpdateArtistRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_artists_proto_msgTypes[2]
+		mi := &file_musicservice_v1_artists_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -155,7 +155,7 @@ func (x *UpdateArtistRequest) String() string {
 func (*UpdateArtistRequest) ProtoMessage() {}
 
 func (x *UpdateArtistRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_artists_proto_msgTypes[2]
+	mi := &file_musicservice_v1_artists_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -168,7 +168,7 @@ func (x *UpdateArtistRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateArtistRequest.ProtoReflect.Descriptor instead.
 func (*UpdateArtistRequest) Descriptor() ([]byte, []int) {
-	return file_artists_proto_rawDescGZIP(), []int{2}
+	return file_musicservice_v1_artists_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *UpdateArtistRequest) GetArtist() *Artist {
@@ -200,7 +200,7 @@ type UpdateArtistResponse struct {
 func (x *UpdateArtistResponse) Reset() {
 	*x = UpdateArtistResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_artists_proto_msgTypes[3]
+		mi := &file_musicservice_v1_artists_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -213,7 +213,7 @@ func (x *UpdateArtistResponse) String() string {
 func (*UpdateArtistResponse) ProtoMessage() {}
 
 func (x *UpdateArtistResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_artists_proto_msgTypes[3]
+	mi := &file_musicservice_v1_artists_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -226,7 +226,7 @@ func (x *UpdateArtistResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateArtistResponse.ProtoReflect.Descriptor instead.
 func (*UpdateArtistResponse) Descriptor() ([]byte, []int) {
-	return file_artists_proto_rawDescGZIP(), []int{3}
+	return file_musicservice_v1_artists_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *UpdateArtistResponse) GetArtist() *Artist {
@@ -249,7 +249,7 @@ type GetArtistsRequest struct {
 func (x *GetArtistsRequest) Reset() {
 	*x = GetArtistsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_artists_proto_msgTypes[4]
+		mi := &file_musicservice_v1_artists_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -262,7 +262,7 @@ func (x *GetArtistsRequest) String() string {
 func (*GetArtistsRequest) ProtoMessage() {}
 
 func (x *GetArtistsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_artists_proto_msgTypes[4]
+	mi := &file_musicservice_v1_artists_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -275,7 +275,7 @@ func (x *GetArtistsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetArtistsRequest.ProtoReflect.Descriptor instead.
 func (*GetArtistsRequest) Descriptor() ([]byte, []int) {
-	return file_artists_proto_rawDescGZIP(), []int{4}
+	return file_musicservice_v1_artists_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetArtistsRequest) GetIds() []string {
@@ -300,7 +300,7 @@ type GetArtistsResponse struct {
 func (x *GetArtistsResponse) Reset() {
 	*x = GetArtistsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_artists_proto_msgTypes[5]
+		mi := &file_musicservice_v1_artists_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -313,7 +313,7 @@ func (x *GetArtistsResponse) String() string {
 func (*GetArtistsResponse) ProtoMessage() {}
 
 func (x *GetArtistsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_artists_proto_msgTypes[5]
+	mi := &file_musicservice_v1_artists_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -326,7 +326,7 @@ func (x *GetArtistsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetArtistsResponse.ProtoReflect.Descriptor instead.
 func (*GetArtistsResponse) Descriptor() ([]byte, []int) {
-	return file_artists_proto_rawDescGZIP(), []int{5}
+	return file_musicservice_v1_artists_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetArtistsResponse) GetArtists() map[string]*Artist {
@@ -355,7 +355,7 @@ type ListArtistsRequest struct {
 func (x *ListArtistsRequest) Reset() {
 	*x = ListArtistsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_artists_proto_msgTypes[6]
+		mi := &file_musicservice_v1_artists_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -368,7 +368,7 @@ func (x *ListArtistsRequest) String() string {
 func (*ListArtistsRequest) ProtoMessage() {}
 
 func (x *ListArtistsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_artists_proto_msgTypes[6]
+	mi := &file_musicservice_v1_artists_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -381,7 +381,7 @@ func (x *ListArtistsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListArtistsRequest.ProtoReflect.Descriptor instead.
 func (*ListArtistsRequest) Descriptor() ([]byte, []int) {
-	return file_artists_proto_rawDescGZIP(), []int{6}
+	return file_musicservice_v1_artists_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ListArtistsRequest) GetPageKey() string {
@@ -417,7 +417,7 @@ type ListArtistsResponse struct {
 func (x *ListArtistsResponse) Reset() {
 	*x = ListArtistsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_artists_proto_msgTypes[7]
+		mi := &file_musicservice_v1_artists_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -430,7 +430,7 @@ func (x *ListArtistsResponse) String() string {
 func (*ListArtistsResponse) ProtoMessage() {}
 
 func (x *ListArtistsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_artists_proto_msgTypes[7]
+	mi := &file_musicservice_v1_artists_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +443,7 @@ func (x *ListArtistsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListArtistsResponse.ProtoReflect.Descriptor instead.
 func (*ListArtistsResponse) Descriptor() ([]byte, []int) {
-	return file_artists_proto_rawDescGZIP(), []int{7}
+	return file_musicservice_v1_artists_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ListArtistsResponse) GetArtists() []*Artist {
@@ -475,7 +475,7 @@ type DeleteArtistRequest struct {
 func (x *DeleteArtistRequest) Reset() {
 	*x = DeleteArtistRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_artists_proto_msgTypes[8]
+		mi := &file_musicservice_v1_artists_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -488,7 +488,7 @@ func (x *DeleteArtistRequest) String() string {
 func (*DeleteArtistRequest) ProtoMessage() {}
 
 func (x *DeleteArtistRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_artists_proto_msgTypes[8]
+	mi := &file_musicservice_v1_artists_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -501,7 +501,7 @@ func (x *DeleteArtistRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteArtistRequest.ProtoReflect.Descriptor instead.
 func (*DeleteArtistRequest) Descriptor() ([]byte, []int) {
-	return file_artists_proto_rawDescGZIP(), []int{8}
+	return file_musicservice_v1_artists_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteArtistRequest) GetId() string {
@@ -522,7 +522,7 @@ type DeleteArtistResponse struct {
 func (x *DeleteArtistResponse) Reset() {
 	*x = DeleteArtistResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_artists_proto_msgTypes[9]
+		mi := &file_musicservice_v1_artists_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -535,7 +535,7 @@ func (x *DeleteArtistResponse) String() string {
 func (*DeleteArtistResponse) ProtoMessage() {}
 
 func (x *DeleteArtistResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_artists_proto_msgTypes[9]
+	mi := &file_musicservice_v1_artists_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -548,17 +548,19 @@ func (x *DeleteArtistResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteArtistResponse.ProtoReflect.Descriptor instead.
 func (*DeleteArtistResponse) Descriptor() ([]byte, []int) {
-	return file_artists_proto_rawDescGZIP(), []int{9}
+	return file_musicservice_v1_artists_proto_rawDescGZIP(), []int{9}
 }
 
-var File_artists_proto protoreflect.FileDescriptor
+var File_musicservice_v1_artists_proto protoreflect.FileDescriptor
 
-var file_artists_proto_rawDesc = []byte{
-	0x0a, 0x0d, 0x61, 0x72, 0x74, 0x69, 0x73, 0x74, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
+var file_musicservice_v1_artists_proto_rawDesc = []byte{
+	0x0a, 0x1d, 0x6d, 0x75, 0x73, 0x69, 0x63, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x76,
+	0x31, 0x2f, 0x61, 0x72, 0x74, 0x69, 0x73, 0x74, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
 	0x0c, 0x6d, 0x75, 0x73, 0x69, 0x63, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x1a, 0x20, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x66,
 	0x69, 0x65, 0x6c, 0x64, 0x5f, 0x6d, 0x61, 0x73, 0x6b, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a,
-	0x0c, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67,
+	0x1c, 0x6d, 0x75, 0x73, 0x69, 0x63, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x76, 0x31,
+	0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67,
 	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61,
 	0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x43, 0x0a, 0x13, 0x43,
 	0x72, 0x65, 0x61, 0x74, 0x65, 0x41, 0x72, 0x74, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65,
@@ -653,19 +655,19 @@ var file_artists_proto_rawDesc = []byte{
 }
 
 var (
-	file_artists_proto_rawDescOnce sync.Once
-	file_artists_proto_rawDescData = file_artists_proto_rawDesc
+	file_musicservice_v1_artists_proto_rawDescOnce sync.Once
+	file_musicservice_v1_artists_proto_rawDescData = file_musicservice_v1_artists_proto_rawDesc
 )
 
-func file_artists_proto_rawDescGZIP() []byte {
-	file_artists_proto_rawDescOnce.Do(func() {
-		file_artists_proto_rawDescData = protoimpl.X.CompressGZIP(file_artists_proto_rawDescData)
+func file_musicservice_v1_artists_proto_rawDescGZIP() []byte {
+	file_musicservice_v1_artists_proto_rawDescOnce.Do(func() {
+		file_musicservice_v1_artists_proto_rawDescData = protoimpl.X.CompressGZIP(file_musicservice_v1_artists_proto_rawDescData)
 	})
-	return file_artists_proto_rawDescData
+	return file_musicservice_v1_artists_proto_rawDescData
 }
 
-var file_artists_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
-var file_artists_proto_goTypes = []interface{}{
+var file_musicservice_v1_artists_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_musicservice_v1_artists_proto_goTypes = []interface{}{
 	(*CreateArtistRequest)(nil),   // 0: musicservice.CreateArtistRequest
 	(*CreateArtistResponse)(nil),  // 1: musicservice.CreateArtistResponse
 	(*UpdateArtistRequest)(nil),   // 2: musicservice.UpdateArtistRequest
@@ -680,7 +682,7 @@ var file_artists_proto_goTypes = []interface{}{
 	(*Artist)(nil),                // 11: musicservice.Artist
 	(*fieldmaskpb.FieldMask)(nil), // 12: google.protobuf.FieldMask
 }
-var file_artists_proto_depIdxs = []int32{
+var file_musicservice_v1_artists_proto_depIdxs = []int32{
 	11, // 0: musicservice.CreateArtistRequest.artist:type_name -> musicservice.Artist
 	11, // 1: musicservice.CreateArtistResponse.artist:type_name -> musicservice.Artist
 	11, // 2: musicservice.UpdateArtistRequest.artist:type_name -> musicservice.Artist
@@ -706,14 +708,14 @@ var file_artists_proto_depIdxs = []int32{
 	0,  // [0:8] is the sub-list for field type_name
 }
 
-func init() { file_artists_proto_init() }
-func file_artists_proto_init() {
-	if File_artists_proto != nil {
+func init() { file_musicservice_v1_artists_proto_init() }
+func file_musicservice_v1_artists_proto_init() {
+	if File_musicservice_v1_artists_proto != nil {
 		return
 	}
-	file_models_proto_init()
+	file_musicservice_v1_models_proto_init()
 	if !protoimpl.UnsafeEnabled {
-		file_artists_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_artists_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateArtistRequest); i {
 			case 0:
 				return &v.state
@@ -725,7 +727,7 @@ func file_artists_proto_init() {
 				return nil
 			}
 		}
-		file_artists_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_artists_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateArtistResponse); i {
 			case 0:
 				return &v.state
@@ -737,7 +739,7 @@ func file_artists_proto_init() {
 				return nil
 			}
 		}
-		file_artists_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_artists_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateArtistRequest); i {
 			case 0:
 				return &v.state
@@ -749,7 +751,7 @@ func file_artists_proto_init() {
 				return nil
 			}
 		}
-		file_artists_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_artists_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateArtistResponse); i {
 			case 0:
 				return &v.state
@@ -761,7 +763,7 @@ func file_artists_proto_init() {
 				return nil
 			}
 		}
-		file_artists_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_artists_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetArtistsRequest); i {
 			case 0:
 				return &v.state
@@ -773,7 +775,7 @@ func file_artists_proto_init() {
 				return nil
 			}
 		}
-		file_artists_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_artists_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetArtistsResponse); i {
 			case 0:
 				return &v.state
@@ -785,7 +787,7 @@ func file_artists_proto_init() {
 				return nil
 			}
 		}
-		file_artists_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_artists_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListArtistsRequest); i {
 			case 0:
 				return &v.state
@@ -797,7 +799,7 @@ func file_artists_proto_init() {
 				return nil
 			}
 		}
-		file_artists_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_artists_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListArtistsResponse); i {
 			case 0:
 				return &v.state
@@ -809,7 +811,7 @@ func file_artists_proto_init() {
 				return nil
 			}
 		}
-		file_artists_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_artists_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteArtistRequest); i {
 			case 0:
 				return &v.state
@@ -821,7 +823,7 @@ func file_artists_proto_init() {
 				return nil
 			}
 		}
-		file_artists_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_artists_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteArtistResponse); i {
 			case 0:
 				return &v.state
@@ -838,18 +840,18 @@ func file_artists_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_artists_proto_rawDesc,
+			RawDescriptor: file_musicservice_v1_artists_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   11,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_artists_proto_goTypes,
-		DependencyIndexes: file_artists_proto_depIdxs,
-		MessageInfos:      file_artists_proto_msgTypes,
+		GoTypes:           file_musicservice_v1_artists_proto_goTypes,
+		DependencyIndexes: file_musicservice_v1_artists_proto_depIdxs,
+		MessageInfos:      file_musicservice_v1_artists_proto_msgTypes,
 	}.Build()
-	File_artists_proto = out.File
-	file_artists_proto_rawDesc = nil
-	file_artists_proto_goTypes = nil
-	file_artists_proto_depIdxs = nil
+	File_musicservice_v1_artists_proto = out.File
+	file_musicservice_v1_artists_proto_rawDesc = nil
+	file_musicservice_v1_artists_proto_goTypes = nil
+	file_musicservice_v1_artists_proto_depIdxs = nil
 }

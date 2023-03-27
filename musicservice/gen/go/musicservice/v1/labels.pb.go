@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.30.0
 // 	protoc        v3.21.12
-// source: labels.proto
+// source: musicservice/v1/labels.proto
 
 package protos
 
@@ -37,7 +37,7 @@ type CreateLabelRequest struct {
 func (x *CreateLabelRequest) Reset() {
 	*x = CreateLabelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[0]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -50,7 +50,7 @@ func (x *CreateLabelRequest) String() string {
 func (*CreateLabelRequest) ProtoMessage() {}
 
 func (x *CreateLabelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[0]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -63,7 +63,7 @@ func (x *CreateLabelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateLabelRequest.ProtoReflect.Descriptor instead.
 func (*CreateLabelRequest) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{0}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CreateLabelRequest) GetLabel() *Label {
@@ -88,7 +88,7 @@ type CreateLabelResponse struct {
 func (x *CreateLabelResponse) Reset() {
 	*x = CreateLabelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[1]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -101,7 +101,7 @@ func (x *CreateLabelResponse) String() string {
 func (*CreateLabelResponse) ProtoMessage() {}
 
 func (x *CreateLabelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[1]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -114,7 +114,7 @@ func (x *CreateLabelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreateLabelResponse.ProtoReflect.Descriptor instead.
 func (*CreateLabelResponse) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{1}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *CreateLabelResponse) GetLabel() *Label {
@@ -142,7 +142,7 @@ type UpdateLabelRequest struct {
 func (x *UpdateLabelRequest) Reset() {
 	*x = UpdateLabelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[2]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -155,7 +155,7 @@ func (x *UpdateLabelRequest) String() string {
 func (*UpdateLabelRequest) ProtoMessage() {}
 
 func (x *UpdateLabelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[2]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -168,7 +168,7 @@ func (x *UpdateLabelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateLabelRequest.ProtoReflect.Descriptor instead.
 func (*UpdateLabelRequest) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{2}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *UpdateLabelRequest) GetLabel() *Label {
@@ -200,7 +200,7 @@ type UpdateLabelResponse struct {
 func (x *UpdateLabelResponse) Reset() {
 	*x = UpdateLabelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[3]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -213,7 +213,7 @@ func (x *UpdateLabelResponse) String() string {
 func (*UpdateLabelResponse) ProtoMessage() {}
 
 func (x *UpdateLabelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[3]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -226,7 +226,7 @@ func (x *UpdateLabelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateLabelResponse.ProtoReflect.Descriptor instead.
 func (*UpdateLabelResponse) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{3}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *UpdateLabelResponse) GetLabel() *Label {
@@ -249,7 +249,7 @@ type GetLabelsRequest struct {
 func (x *GetLabelsRequest) Reset() {
 	*x = GetLabelsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[4]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -262,7 +262,7 @@ func (x *GetLabelsRequest) String() string {
 func (*GetLabelsRequest) ProtoMessage() {}
 
 func (x *GetLabelsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[4]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -275,7 +275,7 @@ func (x *GetLabelsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLabelsRequest.ProtoReflect.Descriptor instead.
 func (*GetLabelsRequest) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{4}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetLabelsRequest) GetIds() []string {
@@ -300,7 +300,7 @@ type GetLabelsResponse struct {
 func (x *GetLabelsResponse) Reset() {
 	*x = GetLabelsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[5]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -313,7 +313,7 @@ func (x *GetLabelsResponse) String() string {
 func (*GetLabelsResponse) ProtoMessage() {}
 
 func (x *GetLabelsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[5]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -326,7 +326,7 @@ func (x *GetLabelsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetLabelsResponse.ProtoReflect.Descriptor instead.
 func (*GetLabelsResponse) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{5}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetLabelsResponse) GetLabels() map[string]*Label {
@@ -355,7 +355,7 @@ type ListLabelsRequest struct {
 func (x *ListLabelsRequest) Reset() {
 	*x = ListLabelsRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[6]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -368,7 +368,7 @@ func (x *ListLabelsRequest) String() string {
 func (*ListLabelsRequest) ProtoMessage() {}
 
 func (x *ListLabelsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[6]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -381,7 +381,7 @@ func (x *ListLabelsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLabelsRequest.ProtoReflect.Descriptor instead.
 func (*ListLabelsRequest) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{6}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ListLabelsRequest) GetPageKey() string {
@@ -417,7 +417,7 @@ type ListLabelsResponse struct {
 func (x *ListLabelsResponse) Reset() {
 	*x = ListLabelsResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[7]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -430,7 +430,7 @@ func (x *ListLabelsResponse) String() string {
 func (*ListLabelsResponse) ProtoMessage() {}
 
 func (x *ListLabelsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[7]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -443,7 +443,7 @@ func (x *ListLabelsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListLabelsResponse.ProtoReflect.Descriptor instead.
 func (*ListLabelsResponse) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{7}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ListLabelsResponse) GetLabels() []*Label {
@@ -475,7 +475,7 @@ type DeleteLabelRequest struct {
 func (x *DeleteLabelRequest) Reset() {
 	*x = DeleteLabelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[8]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -488,7 +488,7 @@ func (x *DeleteLabelRequest) String() string {
 func (*DeleteLabelRequest) ProtoMessage() {}
 
 func (x *DeleteLabelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[8]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -501,7 +501,7 @@ func (x *DeleteLabelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteLabelRequest.ProtoReflect.Descriptor instead.
 func (*DeleteLabelRequest) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{8}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *DeleteLabelRequest) GetId() string {
@@ -522,7 +522,7 @@ type DeleteLabelResponse struct {
 func (x *DeleteLabelResponse) Reset() {
 	*x = DeleteLabelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[9]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -535,7 +535,7 @@ func (x *DeleteLabelResponse) String() string {
 func (*DeleteLabelResponse) ProtoMessage() {}
 
 func (x *DeleteLabelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[9]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -548,7 +548,7 @@ func (x *DeleteLabelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeleteLabelResponse.ProtoReflect.Descriptor instead.
 func (*DeleteLabelResponse) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{9}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{9}
 }
 
 // *
@@ -569,7 +569,7 @@ type AddAlbumRequest struct {
 func (x *AddAlbumRequest) Reset() {
 	*x = AddAlbumRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[10]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -582,7 +582,7 @@ func (x *AddAlbumRequest) String() string {
 func (*AddAlbumRequest) ProtoMessage() {}
 
 func (x *AddAlbumRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[10]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -595,7 +595,7 @@ func (x *AddAlbumRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddAlbumRequest.ProtoReflect.Descriptor instead.
 func (*AddAlbumRequest) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{10}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *AddAlbumRequest) GetLabelId() string {
@@ -623,7 +623,7 @@ type AddAlbumResponse struct {
 func (x *AddAlbumResponse) Reset() {
 	*x = AddAlbumResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[11]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -636,7 +636,7 @@ func (x *AddAlbumResponse) String() string {
 func (*AddAlbumResponse) ProtoMessage() {}
 
 func (x *AddAlbumResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[11]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -649,7 +649,7 @@ func (x *AddAlbumResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddAlbumResponse.ProtoReflect.Descriptor instead.
 func (*AddAlbumResponse) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{11}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{11}
 }
 
 // *
@@ -670,7 +670,7 @@ type RemoveAlbumRequest struct {
 func (x *RemoveAlbumRequest) Reset() {
 	*x = RemoveAlbumRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[12]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -683,7 +683,7 @@ func (x *RemoveAlbumRequest) String() string {
 func (*RemoveAlbumRequest) ProtoMessage() {}
 
 func (x *RemoveAlbumRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[12]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -696,7 +696,7 @@ func (x *RemoveAlbumRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveAlbumRequest.ProtoReflect.Descriptor instead.
 func (*RemoveAlbumRequest) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{12}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *RemoveAlbumRequest) GetLabelId() string {
@@ -724,7 +724,7 @@ type RemoveAlbumResponse struct {
 func (x *RemoveAlbumResponse) Reset() {
 	*x = RemoveAlbumResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[13]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -737,7 +737,7 @@ func (x *RemoveAlbumResponse) String() string {
 func (*RemoveAlbumResponse) ProtoMessage() {}
 
 func (x *RemoveAlbumResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[13]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -750,7 +750,7 @@ func (x *RemoveAlbumResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveAlbumResponse.ProtoReflect.Descriptor instead.
 func (*RemoveAlbumResponse) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{13}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{13}
 }
 
 // *
@@ -772,7 +772,7 @@ type ListAlbumsInLabelRequest struct {
 func (x *ListAlbumsInLabelRequest) Reset() {
 	*x = ListAlbumsInLabelRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[14]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -785,7 +785,7 @@ func (x *ListAlbumsInLabelRequest) String() string {
 func (*ListAlbumsInLabelRequest) ProtoMessage() {}
 
 func (x *ListAlbumsInLabelRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[14]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -798,7 +798,7 @@ func (x *ListAlbumsInLabelRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAlbumsInLabelRequest.ProtoReflect.Descriptor instead.
 func (*ListAlbumsInLabelRequest) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{14}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *ListAlbumsInLabelRequest) GetPageKey() string {
@@ -834,7 +834,7 @@ type ListAlbumsInLabelResponse struct {
 func (x *ListAlbumsInLabelResponse) Reset() {
 	*x = ListAlbumsInLabelResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_labels_proto_msgTypes[15]
+		mi := &file_musicservice_v1_labels_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -847,7 +847,7 @@ func (x *ListAlbumsInLabelResponse) String() string {
 func (*ListAlbumsInLabelResponse) ProtoMessage() {}
 
 func (x *ListAlbumsInLabelResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_labels_proto_msgTypes[15]
+	mi := &file_musicservice_v1_labels_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -860,7 +860,7 @@ func (x *ListAlbumsInLabelResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListAlbumsInLabelResponse.ProtoReflect.Descriptor instead.
 func (*ListAlbumsInLabelResponse) Descriptor() ([]byte, []int) {
-	return file_labels_proto_rawDescGZIP(), []int{15}
+	return file_musicservice_v1_labels_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *ListAlbumsInLabelResponse) GetAlbums() []*Album {
@@ -877,13 +877,15 @@ func (x *ListAlbumsInLabelResponse) GetNextPageKey() string {
 	return ""
 }
 
-var File_labels_proto protoreflect.FileDescriptor
+var File_musicservice_v1_labels_proto protoreflect.FileDescriptor
 
-var file_labels_proto_rawDesc = []byte{
-	0x0a, 0x0c, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0c,
+var file_musicservice_v1_labels_proto_rawDesc = []byte{
+	0x0a, 0x1c, 0x6d, 0x75, 0x73, 0x69, 0x63, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x76,
+	0x31, 0x2f, 0x6c, 0x61, 0x62, 0x65, 0x6c, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x0c,
 	0x6d, 0x75, 0x73, 0x69, 0x63, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x1a, 0x20, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2f, 0x66, 0x69,
-	0x65, 0x6c, 0x64, 0x5f, 0x6d, 0x61, 0x73, 0x6b, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x0c,
+	0x65, 0x6c, 0x64, 0x5f, 0x6d, 0x61, 0x73, 0x6b, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c,
+	0x6d, 0x75, 0x73, 0x69, 0x63, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2f, 0x76, 0x31, 0x2f,
 	0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x67, 0x6f,
 	0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74,
 	0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x3f, 0x0a, 0x12, 0x43, 0x72,
@@ -1016,19 +1018,19 @@ var file_labels_proto_rawDesc = []byte{
 }
 
 var (
-	file_labels_proto_rawDescOnce sync.Once
-	file_labels_proto_rawDescData = file_labels_proto_rawDesc
+	file_musicservice_v1_labels_proto_rawDescOnce sync.Once
+	file_musicservice_v1_labels_proto_rawDescData = file_musicservice_v1_labels_proto_rawDesc
 )
 
-func file_labels_proto_rawDescGZIP() []byte {
-	file_labels_proto_rawDescOnce.Do(func() {
-		file_labels_proto_rawDescData = protoimpl.X.CompressGZIP(file_labels_proto_rawDescData)
+func file_musicservice_v1_labels_proto_rawDescGZIP() []byte {
+	file_musicservice_v1_labels_proto_rawDescOnce.Do(func() {
+		file_musicservice_v1_labels_proto_rawDescData = protoimpl.X.CompressGZIP(file_musicservice_v1_labels_proto_rawDescData)
 	})
-	return file_labels_proto_rawDescData
+	return file_musicservice_v1_labels_proto_rawDescData
 }
 
-var file_labels_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
-var file_labels_proto_goTypes = []interface{}{
+var file_musicservice_v1_labels_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
+var file_musicservice_v1_labels_proto_goTypes = []interface{}{
 	(*CreateLabelRequest)(nil),        // 0: musicservice.CreateLabelRequest
 	(*CreateLabelResponse)(nil),       // 1: musicservice.CreateLabelResponse
 	(*UpdateLabelRequest)(nil),        // 2: musicservice.UpdateLabelRequest
@@ -1050,7 +1052,7 @@ var file_labels_proto_goTypes = []interface{}{
 	(*fieldmaskpb.FieldMask)(nil),     // 18: google.protobuf.FieldMask
 	(*Album)(nil),                     // 19: musicservice.Album
 }
-var file_labels_proto_depIdxs = []int32{
+var file_musicservice_v1_labels_proto_depIdxs = []int32{
 	17, // 0: musicservice.CreateLabelRequest.label:type_name -> musicservice.Label
 	17, // 1: musicservice.CreateLabelResponse.label:type_name -> musicservice.Label
 	17, // 2: musicservice.UpdateLabelRequest.label:type_name -> musicservice.Label
@@ -1083,14 +1085,14 @@ var file_labels_proto_depIdxs = []int32{
 	0,  // [0:9] is the sub-list for field type_name
 }
 
-func init() { file_labels_proto_init() }
-func file_labels_proto_init() {
-	if File_labels_proto != nil {
+func init() { file_musicservice_v1_labels_proto_init() }
+func file_musicservice_v1_labels_proto_init() {
+	if File_musicservice_v1_labels_proto != nil {
 		return
 	}
-	file_models_proto_init()
+	file_musicservice_v1_models_proto_init()
 	if !protoimpl.UnsafeEnabled {
-		file_labels_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateLabelRequest); i {
 			case 0:
 				return &v.state
@@ -1102,7 +1104,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*CreateLabelResponse); i {
 			case 0:
 				return &v.state
@@ -1114,7 +1116,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateLabelRequest); i {
 			case 0:
 				return &v.state
@@ -1126,7 +1128,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*UpdateLabelResponse); i {
 			case 0:
 				return &v.state
@@ -1138,7 +1140,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLabelsRequest); i {
 			case 0:
 				return &v.state
@@ -1150,7 +1152,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetLabelsResponse); i {
 			case 0:
 				return &v.state
@@ -1162,7 +1164,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListLabelsRequest); i {
 			case 0:
 				return &v.state
@@ -1174,7 +1176,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListLabelsResponse); i {
 			case 0:
 				return &v.state
@@ -1186,7 +1188,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteLabelRequest); i {
 			case 0:
 				return &v.state
@@ -1198,7 +1200,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DeleteLabelResponse); i {
 			case 0:
 				return &v.state
@@ -1210,7 +1212,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AddAlbumRequest); i {
 			case 0:
 				return &v.state
@@ -1222,7 +1224,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*AddAlbumResponse); i {
 			case 0:
 				return &v.state
@@ -1234,7 +1236,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RemoveAlbumRequest); i {
 			case 0:
 				return &v.state
@@ -1246,7 +1248,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RemoveAlbumResponse); i {
 			case 0:
 				return &v.state
@@ -1258,7 +1260,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAlbumsInLabelRequest); i {
 			case 0:
 				return &v.state
@@ -1270,7 +1272,7 @@ func file_labels_proto_init() {
 				return nil
 			}
 		}
-		file_labels_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_musicservice_v1_labels_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ListAlbumsInLabelResponse); i {
 			case 0:
 				return &v.state
@@ -1287,18 +1289,18 @@ func file_labels_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_labels_proto_rawDesc,
+			RawDescriptor: file_musicservice_v1_labels_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_labels_proto_goTypes,
-		DependencyIndexes: file_labels_proto_depIdxs,
-		MessageInfos:      file_labels_proto_msgTypes,
+		GoTypes:           file_musicservice_v1_labels_proto_goTypes,
+		DependencyIndexes: file_musicservice_v1_labels_proto_depIdxs,
+		MessageInfos:      file_musicservice_v1_labels_proto_msgTypes,
 	}.Build()
-	File_labels_proto = out.File
-	file_labels_proto_rawDesc = nil
-	file_labels_proto_goTypes = nil
-	file_labels_proto_depIdxs = nil
+	File_musicservice_v1_labels_proto = out.File
+	file_musicservice_v1_labels_proto_rawDesc = nil
+	file_musicservice_v1_labels_proto_goTypes = nil
+	file_musicservice_v1_labels_proto_depIdxs = nil
 }
