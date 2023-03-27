@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "albums.proto",
+    "title": "musicservice/v1/albums.proto",
     "version": "version not set"
   },
   "tags": [
