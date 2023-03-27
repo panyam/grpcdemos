@@ -2,7 +2,7 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
 option go_package = "music.com/musicservice/protos";
-package musicservice;
+package musicservice.v1;
 
 // A song - eg Jingle Bells
 message Song {

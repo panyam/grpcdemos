@@ -2,7 +2,7 @@ syntax = "proto3";
 import "google/protobuf/field_mask.proto";
 
 option go_package = "music.com/musicservice/protos";
-package musicservice;
+package musicservice.v1;
 
 import "musicservice/v1/models.proto";
 import "google/api/annotations.proto";

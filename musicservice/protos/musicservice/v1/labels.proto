@@ -2,7 +2,7 @@ syntax = "proto3";
 import "google/protobuf/field_mask.proto";
 
 option go_package = "music.com/musicservice/protos";
-package musicservice;
+package musicservice.v1;
 
 import "musicservice/v1/models.proto";
 import "google/api/annotations.proto";
@@ -71,7 +71,7 @@ service LabelService {
   /**
    * List all albums owned by this label.
    */
-  rpc ListAlbums(ListAlbumsInLabelRequest) returns (ListAlbumsInLabelResponse) {}
+  rpc ListAlbums(LabelServiceListAlbumsRequest) returns (LabelServiceListAlbumsResponse) {}
 }
 
 /**
@@ -229,7 +229,7 @@ message RemoveAlbumResponse {
 /**
  * Request object for an album listing.
  */
-message ListAlbumsInLabelRequest {
+message LabelServiceListAlbumsRequest {
   /**
    * Instead of an offset an abstract  "page" key is provided that offers
    * an opaque "pointer" into some offset in a result set.
@@ -245,7 +245,7 @@ message ListAlbumsInLabelRequest {
 /**
  * Response for listing albums in a label.
  */
-message ListAlbumsInLabelResponse {
+message LabelServiceListAlbumsResponse {
   /**
    * List of albums.
    */
