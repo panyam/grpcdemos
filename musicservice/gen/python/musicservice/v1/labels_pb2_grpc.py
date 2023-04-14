@@ -17,44 +17,44 @@ class LabelServiceStub(object):
             channel: A grpc.Channel.
         """
         self.CreateLabel = channel.unary_unary(
-                '/musicservice.LabelService/CreateLabel',
+                '/musicservice.v1.LabelService/CreateLabel',
                 request_serializer=musicservice_dot_v1_dot_labels__pb2.CreateLabelRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_labels__pb2.CreateLabelResponse.FromString,
                 )
         self.GetLabels = channel.unary_unary(
-                '/musicservice.LabelService/GetLabels',
+                '/musicservice.v1.LabelService/GetLabels',
                 request_serializer=musicservice_dot_v1_dot_labels__pb2.GetLabelsRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_labels__pb2.GetLabelsResponse.FromString,
                 )
         self.UpdateLabel = channel.unary_unary(
-                '/musicservice.LabelService/UpdateLabel',
+                '/musicservice.v1.LabelService/UpdateLabel',
                 request_serializer=musicservice_dot_v1_dot_labels__pb2.UpdateLabelRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_labels__pb2.UpdateLabelResponse.FromString,
                 )
         self.DeleteLabel = channel.unary_unary(
-                '/musicservice.LabelService/DeleteLabel',
+                '/musicservice.v1.LabelService/DeleteLabel',
                 request_serializer=musicservice_dot_v1_dot_labels__pb2.DeleteLabelRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_labels__pb2.DeleteLabelResponse.FromString,
                 )
         self.ListLabels = channel.unary_unary(
-                '/musicservice.LabelService/ListLabels',
+                '/musicservice.v1.LabelService/ListLabels',
                 request_serializer=musicservice_dot_v1_dot_labels__pb2.ListLabelsRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_labels__pb2.ListLabelsResponse.FromString,
                 )
         self.AddAlbum = channel.unary_unary(
-                '/musicservice.LabelService/AddAlbum',
+                '/musicservice.v1.LabelService/AddAlbum',
                 request_serializer=musicservice_dot_v1_dot_labels__pb2.AddAlbumRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_labels__pb2.AddAlbumResponse.FromString,
                 )
         self.RemoveAlbum = channel.unary_unary(
-                '/musicservice.LabelService/RemoveAlbum',
+                '/musicservice.v1.LabelService/RemoveAlbum',
                 request_serializer=musicservice_dot_v1_dot_labels__pb2.RemoveAlbumRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_labels__pb2.RemoveAlbumResponse.FromString,
                 )
         self.ListAlbums = channel.unary_unary(
-                '/musicservice.LabelService/ListAlbums',
-                request_serializer=musicservice_dot_v1_dot_labels__pb2.ListAlbumsInLabelRequest.SerializeToString,
-                response_deserializer=musicservice_dot_v1_dot_labels__pb2.ListAlbumsInLabelResponse.FromString,
+                '/musicservice.v1.LabelService/ListAlbums',
+                request_serializer=musicservice_dot_v1_dot_labels__pb2.LabelServiceListAlbumsRequest.SerializeToString,
+                response_deserializer=musicservice_dot_v1_dot_labels__pb2.LabelServiceListAlbumsResponse.FromString,
                 )
 
 
@@ -167,12 +167,12 @@ def add_LabelServiceServicer_to_server(servicer, server):
             ),
             'ListAlbums': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAlbums,
-                    request_deserializer=musicservice_dot_v1_dot_labels__pb2.ListAlbumsInLabelRequest.FromString,
-                    response_serializer=musicservice_dot_v1_dot_labels__pb2.ListAlbumsInLabelResponse.SerializeToString,
+                    request_deserializer=musicservice_dot_v1_dot_labels__pb2.LabelServiceListAlbumsRequest.FromString,
+                    response_serializer=musicservice_dot_v1_dot_labels__pb2.LabelServiceListAlbumsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'musicservice.LabelService', rpc_method_handlers)
+            'musicservice.v1.LabelService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -193,7 +193,7 @@ class LabelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.LabelService/CreateLabel',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.LabelService/CreateLabel',
             musicservice_dot_v1_dot_labels__pb2.CreateLabelRequest.SerializeToString,
             musicservice_dot_v1_dot_labels__pb2.CreateLabelResponse.FromString,
             options, channel_credentials,
@@ -210,7 +210,7 @@ class LabelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.LabelService/GetLabels',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.LabelService/GetLabels',
             musicservice_dot_v1_dot_labels__pb2.GetLabelsRequest.SerializeToString,
             musicservice_dot_v1_dot_labels__pb2.GetLabelsResponse.FromString,
             options, channel_credentials,
@@ -227,7 +227,7 @@ class LabelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.LabelService/UpdateLabel',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.LabelService/UpdateLabel',
             musicservice_dot_v1_dot_labels__pb2.UpdateLabelRequest.SerializeToString,
             musicservice_dot_v1_dot_labels__pb2.UpdateLabelResponse.FromString,
             options, channel_credentials,
@@ -244,7 +244,7 @@ class LabelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.LabelService/DeleteLabel',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.LabelService/DeleteLabel',
             musicservice_dot_v1_dot_labels__pb2.DeleteLabelRequest.SerializeToString,
             musicservice_dot_v1_dot_labels__pb2.DeleteLabelResponse.FromString,
             options, channel_credentials,
@@ -261,7 +261,7 @@ class LabelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.LabelService/ListLabels',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.LabelService/ListLabels',
             musicservice_dot_v1_dot_labels__pb2.ListLabelsRequest.SerializeToString,
             musicservice_dot_v1_dot_labels__pb2.ListLabelsResponse.FromString,
             options, channel_credentials,
@@ -278,7 +278,7 @@ class LabelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.LabelService/AddAlbum',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.LabelService/AddAlbum',
             musicservice_dot_v1_dot_labels__pb2.AddAlbumRequest.SerializeToString,
             musicservice_dot_v1_dot_labels__pb2.AddAlbumResponse.FromString,
             options, channel_credentials,
@@ -295,7 +295,7 @@ class LabelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.LabelService/RemoveAlbum',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.LabelService/RemoveAlbum',
             musicservice_dot_v1_dot_labels__pb2.RemoveAlbumRequest.SerializeToString,
             musicservice_dot_v1_dot_labels__pb2.RemoveAlbumResponse.FromString,
             options, channel_credentials,
@@ -312,8 +312,8 @@ class LabelService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.LabelService/ListAlbums',
-            musicservice_dot_v1_dot_labels__pb2.ListAlbumsInLabelRequest.SerializeToString,
-            musicservice_dot_v1_dot_labels__pb2.ListAlbumsInLabelResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.LabelService/ListAlbums',
+            musicservice_dot_v1_dot_labels__pb2.LabelServiceListAlbumsRequest.SerializeToString,
+            musicservice_dot_v1_dot_labels__pb2.LabelServiceListAlbumsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

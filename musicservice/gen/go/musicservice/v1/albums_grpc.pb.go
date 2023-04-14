@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	AlbumService_CreateAlbum_FullMethodName = "/musicservice.AlbumService/CreateAlbum"
-	AlbumService_GetAlbums_FullMethodName   = "/musicservice.AlbumService/GetAlbums"
-	AlbumService_UpdateAlbum_FullMethodName = "/musicservice.AlbumService/UpdateAlbum"
-	AlbumService_DeleteAlbum_FullMethodName = "/musicservice.AlbumService/DeleteAlbum"
-	AlbumService_ListAlbums_FullMethodName  = "/musicservice.AlbumService/ListAlbums"
+	AlbumService_CreateAlbum_FullMethodName = "/musicservice.v1.AlbumService/CreateAlbum"
+	AlbumService_GetAlbums_FullMethodName   = "/musicservice.v1.AlbumService/GetAlbums"
+	AlbumService_UpdateAlbum_FullMethodName = "/musicservice.v1.AlbumService/UpdateAlbum"
+	AlbumService_DeleteAlbum_FullMethodName = "/musicservice.v1.AlbumService/DeleteAlbum"
+	AlbumService_ListAlbums_FullMethodName  = "/musicservice.v1.AlbumService/ListAlbums"
 )
 
 // AlbumServiceClient is the client API for AlbumService service.
@@ -236,7 +236,7 @@ func _AlbumService_ListAlbums_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var AlbumService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "musicservice.AlbumService",
+	ServiceName: "musicservice.v1.AlbumService",
 	HandlerType: (*AlbumServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

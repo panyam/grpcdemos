@@ -33,7 +33,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceListAlbumsResponse"
+              "$ref": "#/definitions/v1ListAlbumsResponse"
             }
           },
           "default": {
@@ -71,7 +71,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceCreateAlbumResponse"
+              "$ref": "#/definitions/v1CreateAlbumResponse"
             }
           },
           "default": {
@@ -87,7 +87,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/musicserviceCreateAlbumRequest"
+              "$ref": "#/definitions/v1CreateAlbumRequest"
             }
           }
         ],
@@ -104,7 +104,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceUpdateAlbumResponse"
+              "$ref": "#/definitions/v1UpdateAlbumResponse"
             }
           },
           "default": {
@@ -128,7 +128,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/musicserviceAlbum"
+              "$ref": "#/definitions/v1Album"
             }
           },
           {
@@ -152,7 +152,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceGetAlbumsResponse"
+              "$ref": "#/definitions/v1GetAlbumsResponse"
             }
           },
           "default": {
@@ -187,7 +187,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceListArtistsResponse"
+              "$ref": "#/definitions/v1ListArtistsResponse"
             }
           },
           "default": {
@@ -225,7 +225,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceCreateArtistResponse"
+              "$ref": "#/definitions/v1CreateArtistResponse"
             }
           },
           "default": {
@@ -241,7 +241,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/musicserviceCreateArtistRequest"
+              "$ref": "#/definitions/v1CreateArtistRequest"
             }
           }
         ],
@@ -258,7 +258,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceUpdateArtistResponse"
+              "$ref": "#/definitions/v1UpdateArtistResponse"
             }
           },
           "default": {
@@ -282,7 +282,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/musicserviceArtist"
+              "$ref": "#/definitions/v1Artist"
             }
           },
           {
@@ -306,7 +306,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceGetArtistsResponse"
+              "$ref": "#/definitions/v1GetArtistsResponse"
             }
           },
           "default": {
@@ -341,7 +341,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceListLabelsResponse"
+              "$ref": "#/definitions/v1ListLabelsResponse"
             }
           },
           "default": {
@@ -379,7 +379,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceCreateLabelResponse"
+              "$ref": "#/definitions/v1CreateLabelResponse"
             }
           },
           "default": {
@@ -395,7 +395,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/musicserviceCreateLabelRequest"
+              "$ref": "#/definitions/v1CreateLabelRequest"
             }
           }
         ],
@@ -412,7 +412,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceUpdateLabelResponse"
+              "$ref": "#/definitions/v1UpdateLabelResponse"
             }
           },
           "default": {
@@ -436,7 +436,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/musicserviceLabel"
+              "$ref": "#/definitions/musicservicev1Label"
             }
           },
           {
@@ -460,7 +460,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceGetLabelsResponse"
+              "$ref": "#/definitions/v1GetLabelsResponse"
             }
           },
           "default": {
@@ -495,7 +495,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceDeleteSongResponse"
+              "$ref": "#/definitions/v1DeleteSongResponse"
             }
           },
           "default": {
@@ -527,7 +527,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceListSongsResponse"
+              "$ref": "#/definitions/v1ListSongsResponse"
             }
           },
           "default": {
@@ -565,7 +565,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceCreateSongResponse"
+              "$ref": "#/definitions/v1CreateSongResponse"
             }
           },
           "default": {
@@ -581,7 +581,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/musicserviceCreateSongRequest"
+              "$ref": "#/definitions/v1CreateSongRequest"
             }
           }
         ],
@@ -598,7 +598,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceUpdateSongResponse"
+              "$ref": "#/definitions/v1UpdateSongResponse"
             }
           },
           "default": {
@@ -622,7 +622,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/musicserviceSong"
+              "$ref": "#/definitions/v1Song"
             }
           },
           {
@@ -646,7 +646,7 @@
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/musicserviceGetSongsResponse"
+              "$ref": "#/definitions/v1GetSongsResponse"
             }
           },
           "default": {
@@ -675,11 +675,65 @@
     }
   },
   "definitions": {
-    "musicserviceAddAlbumResponse": {
+    "musicservicev1Label": {
+      "type": "object",
+      "properties": {
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string",
+          "title": "ID of this label"
+        },
+        "name": {
+          "type": "string",
+          "title": "Name of this record label company (eg, \"Virgin Records\")"
+        },
+        "establishedDate": {
+          "type": "string",
+          "format": "date-time",
+          "title": "When this company was established"
+        }
+      },
+      "description": "A record label company.   This entity is the owner of albums as they produce and release them.\nNote unlike the Album entity the Label does not contain a (repeated) field of all albums it\nowns.   This is because the way the albums are added to or removed from a Label's collection\nis via the API."
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AddAlbumResponse": {
       "type": "object",
       "title": "Response for an AddAlbum request"
     },
-    "musicserviceAlbum": {
+    "v1Album": {
       "type": "object",
       "properties": {
         "createdAt": {
@@ -717,7 +771,7 @@
       },
       "description": "Album showcasing a bunch of artists performing a bunch of songs."
     },
-    "musicserviceArtist": {
+    "v1Artist": {
       "type": "object",
       "properties": {
         "createdAt": {
@@ -748,188 +802,161 @@
       },
       "title": "Artists perform/play/sing songs"
     },
-    "musicserviceCreateAlbumRequest": {
+    "v1CreateAlbumRequest": {
       "type": "object",
       "properties": {
         "album": {
-          "$ref": "#/definitions/musicserviceAlbum",
+          "$ref": "#/definitions/v1Album",
           "title": "Album being updated"
         }
       },
       "title": "Album creation request object"
     },
-    "musicserviceCreateAlbumResponse": {
+    "v1CreateAlbumResponse": {
       "type": "object",
       "properties": {
         "album": {
-          "$ref": "#/definitions/musicserviceAlbum",
+          "$ref": "#/definitions/v1Album",
           "title": "Album being created"
         }
       },
       "description": "Response of an album creation."
     },
-    "musicserviceCreateArtistRequest": {
+    "v1CreateArtistRequest": {
       "type": "object",
       "properties": {
         "artist": {
-          "$ref": "#/definitions/musicserviceArtist",
+          "$ref": "#/definitions/v1Artist",
           "title": "Artist being updated"
         }
       },
       "title": "Artist creation request object"
     },
-    "musicserviceCreateArtistResponse": {
+    "v1CreateArtistResponse": {
       "type": "object",
       "properties": {
         "artist": {
-          "$ref": "#/definitions/musicserviceArtist",
+          "$ref": "#/definitions/v1Artist",
           "title": "Artist being created"
         }
       },
       "description": "Response of an artist creation."
     },
-    "musicserviceCreateLabelRequest": {
+    "v1CreateLabelRequest": {
       "type": "object",
       "properties": {
         "label": {
-          "$ref": "#/definitions/musicserviceLabel",
+          "$ref": "#/definitions/musicservicev1Label",
           "title": "Label being updated"
         }
       },
       "title": "Label creation request object"
     },
-    "musicserviceCreateLabelResponse": {
+    "v1CreateLabelResponse": {
       "type": "object",
       "properties": {
         "label": {
-          "$ref": "#/definitions/musicserviceLabel",
+          "$ref": "#/definitions/musicservicev1Label",
           "title": "Label being created"
         }
       },
       "description": "Response of an label creation."
     },
-    "musicserviceCreateSongRequest": {
+    "v1CreateSongRequest": {
       "type": "object",
       "properties": {
         "song": {
-          "$ref": "#/definitions/musicserviceSong",
+          "$ref": "#/definitions/v1Song",
           "title": "Song being updated"
         }
       },
       "title": "Song creation request object"
     },
-    "musicserviceCreateSongResponse": {
+    "v1CreateSongResponse": {
       "type": "object",
       "properties": {
         "song": {
-          "$ref": "#/definitions/musicserviceSong",
+          "$ref": "#/definitions/v1Song",
           "title": "Song being created"
         }
       },
       "description": "Response of an song creation."
     },
-    "musicserviceDeleteAlbumResponse": {
+    "v1DeleteAlbumResponse": {
       "type": "object",
       "title": "Album deletion response"
     },
-    "musicserviceDeleteArtistResponse": {
+    "v1DeleteArtistResponse": {
       "type": "object",
       "title": "Artist deletion response"
     },
-    "musicserviceDeleteLabelResponse": {
+    "v1DeleteLabelResponse": {
       "type": "object",
       "title": "Label deletion response"
     },
-    "musicserviceDeleteSongResponse": {
+    "v1DeleteSongResponse": {
       "type": "object",
       "title": "Song deletion response"
     },
-    "musicserviceGetAlbumsResponse": {
+    "v1GetAlbumsResponse": {
       "type": "object",
       "properties": {
         "albums": {
           "type": "object",
           "additionalProperties": {
-            "$ref": "#/definitions/musicserviceAlbum"
+            "$ref": "#/definitions/v1Album"
           },
           "description": "Albums mapped by their ID."
         }
       },
       "description": "Response for an album batch get."
     },
-    "musicserviceGetArtistsResponse": {
+    "v1GetArtistsResponse": {
       "type": "object",
       "properties": {
         "artists": {
           "type": "object",
           "additionalProperties": {
-            "$ref": "#/definitions/musicserviceArtist"
+            "$ref": "#/definitions/v1Artist"
           },
           "description": "Artists mapped by their ID."
         }
       },
       "description": "Response for an artist batch get."
     },
-    "musicserviceGetLabelsResponse": {
+    "v1GetLabelsResponse": {
       "type": "object",
       "properties": {
         "labels": {
           "type": "object",
           "additionalProperties": {
-            "$ref": "#/definitions/musicserviceLabel"
+            "$ref": "#/definitions/musicservicev1Label"
           },
           "description": "Labels mapped by their ID."
         }
       },
       "description": "Response for an label batch get."
     },
-    "musicserviceGetSongsResponse": {
+    "v1GetSongsResponse": {
       "type": "object",
       "properties": {
         "songs": {
           "type": "object",
           "additionalProperties": {
-            "$ref": "#/definitions/musicserviceSong"
+            "$ref": "#/definitions/v1Song"
           },
           "description": "Songs mapped by their ID."
         }
       },
       "description": "Response for an song batch get."
     },
-    "musicserviceLabel": {
-      "type": "object",
-      "properties": {
-        "createdAt": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "updatedAt": {
-          "type": "string",
-          "format": "date-time"
-        },
-        "id": {
-          "type": "string",
-          "title": "ID of this label"
-        },
-        "name": {
-          "type": "string",
-          "title": "Name of this record label company (eg, \"Virgin Records\")"
-        },
-        "establishedDate": {
-          "type": "string",
-          "format": "date-time",
-          "title": "When this company was established"
-        }
-      },
-      "description": "A record label company.   This entity is the owner of albums as they produce and release them.\nNote unlike the Album entity the Label does not contain a (repeated) field of all albums it\nowns.   This is because the way the albums are added to or removed from a Label's collection\nis via the API."
-    },
-    "musicserviceListAlbumsInLabelResponse": {
+    "v1LabelServiceListAlbumsResponse": {
       "type": "object",
       "properties": {
         "albums": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/musicserviceAlbum"
+            "$ref": "#/definitions/v1Album"
           },
           "description": "List of albums."
         },
@@ -940,13 +967,13 @@
       },
       "description": "Response for listing albums in a label."
     },
-    "musicserviceListAlbumsResponse": {
+    "v1ListAlbumsResponse": {
       "type": "object",
       "properties": {
         "albums": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/musicserviceAlbum"
+            "$ref": "#/definitions/v1Album"
           },
           "description": "The list of albums found as part of this response."
         },
@@ -957,13 +984,13 @@
       },
       "description": "Response of a album search/listing."
     },
-    "musicserviceListArtistsResponse": {
+    "v1ListArtistsResponse": {
       "type": "object",
       "properties": {
         "artists": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/musicserviceArtist"
+            "$ref": "#/definitions/v1Artist"
           },
           "description": "The list of artists found as part of this response."
         },
@@ -974,13 +1001,13 @@
       },
       "description": "Response of a artist search/listing."
     },
-    "musicserviceListLabelsResponse": {
+    "v1ListLabelsResponse": {
       "type": "object",
       "properties": {
         "labels": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/musicserviceLabel"
+            "$ref": "#/definitions/musicservicev1Label"
           },
           "description": "The list of labels found as part of this response."
         },
@@ -991,13 +1018,13 @@
       },
       "description": "Response of a label search/listing."
     },
-    "musicserviceListSongsResponse": {
+    "v1ListSongsResponse": {
       "type": "object",
       "properties": {
         "songs": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/musicserviceSong"
+            "$ref": "#/definitions/v1Song"
           },
           "description": "The list of songs found as part of this response."
         },
@@ -1008,11 +1035,11 @@
       },
       "description": "Response of a song search/listing."
     },
-    "musicserviceRemoveAlbumResponse": {
+    "v1RemoveAlbumResponse": {
       "type": "object",
       "title": "Response for an RemoveAlbum request"
     },
-    "musicserviceSong": {
+    "v1Song": {
       "type": "object",
       "properties": {
         "createdAt": {
@@ -1049,72 +1076,45 @@
       },
       "title": "A song - eg Jingle Bells"
     },
-    "musicserviceUpdateAlbumResponse": {
+    "v1UpdateAlbumResponse": {
       "type": "object",
       "properties": {
         "album": {
-          "$ref": "#/definitions/musicserviceAlbum",
+          "$ref": "#/definitions/v1Album",
           "title": "Album being updated"
         }
       },
       "description": "The request for (partially) updating an Album."
     },
-    "musicserviceUpdateArtistResponse": {
+    "v1UpdateArtistResponse": {
       "type": "object",
       "properties": {
         "artist": {
-          "$ref": "#/definitions/musicserviceArtist",
+          "$ref": "#/definitions/v1Artist",
           "title": "Artist being updated"
         }
       },
       "description": "The request for (partially) updating an Artist."
     },
-    "musicserviceUpdateLabelResponse": {
+    "v1UpdateLabelResponse": {
       "type": "object",
       "properties": {
         "label": {
-          "$ref": "#/definitions/musicserviceLabel",
+          "$ref": "#/definitions/musicservicev1Label",
           "title": "Label being updated"
         }
       },
       "description": "The request for (partially) updating an Label."
     },
-    "musicserviceUpdateSongResponse": {
+    "v1UpdateSongResponse": {
       "type": "object",
       "properties": {
         "song": {
-          "$ref": "#/definitions/musicserviceSong",
+          "$ref": "#/definitions/v1Song",
           "title": "Song being updated"
         }
       },
       "description": "The request for (partially) updating an Song."
-    },
-    "protobufAny": {
-      "type": "object",
-      "properties": {
-        "@type": {
-          "type": "string"
-        }
-      },
-      "additionalProperties": {}
-    },
-    "rpcStatus": {
-      "type": "object",
-      "properties": {
-        "code": {
-          "type": "integer",
-          "format": "int32"
-        },
-        "message": {
-          "type": "string"
-        },
-        "details": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/protobufAny"
-          }
-        }
-      }
     }
   }
 }

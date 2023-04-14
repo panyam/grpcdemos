@@ -17,27 +17,27 @@ class AlbumServiceStub(object):
             channel: A grpc.Channel.
         """
         self.CreateAlbum = channel.unary_unary(
-                '/musicservice.AlbumService/CreateAlbum',
+                '/musicservice.v1.AlbumService/CreateAlbum',
                 request_serializer=musicservice_dot_v1_dot_albums__pb2.CreateAlbumRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_albums__pb2.CreateAlbumResponse.FromString,
                 )
         self.GetAlbums = channel.unary_unary(
-                '/musicservice.AlbumService/GetAlbums',
+                '/musicservice.v1.AlbumService/GetAlbums',
                 request_serializer=musicservice_dot_v1_dot_albums__pb2.GetAlbumsRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_albums__pb2.GetAlbumsResponse.FromString,
                 )
         self.UpdateAlbum = channel.unary_unary(
-                '/musicservice.AlbumService/UpdateAlbum',
+                '/musicservice.v1.AlbumService/UpdateAlbum',
                 request_serializer=musicservice_dot_v1_dot_albums__pb2.UpdateAlbumRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_albums__pb2.UpdateAlbumResponse.FromString,
                 )
         self.DeleteAlbum = channel.unary_unary(
-                '/musicservice.AlbumService/DeleteAlbum',
+                '/musicservice.v1.AlbumService/DeleteAlbum',
                 request_serializer=musicservice_dot_v1_dot_albums__pb2.DeleteAlbumRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_albums__pb2.DeleteAlbumResponse.FromString,
                 )
         self.ListAlbums = channel.unary_unary(
-                '/musicservice.AlbumService/ListAlbums',
+                '/musicservice.v1.AlbumService/ListAlbums',
                 request_serializer=musicservice_dot_v1_dot_albums__pb2.ListAlbumsRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_albums__pb2.ListAlbumsResponse.FromString,
                 )
@@ -118,7 +118,7 @@ def add_AlbumServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'musicservice.AlbumService', rpc_method_handlers)
+            'musicservice.v1.AlbumService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -139,7 +139,7 @@ class AlbumService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.AlbumService/CreateAlbum',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.AlbumService/CreateAlbum',
             musicservice_dot_v1_dot_albums__pb2.CreateAlbumRequest.SerializeToString,
             musicservice_dot_v1_dot_albums__pb2.CreateAlbumResponse.FromString,
             options, channel_credentials,
@@ -156,7 +156,7 @@ class AlbumService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.AlbumService/GetAlbums',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.AlbumService/GetAlbums',
             musicservice_dot_v1_dot_albums__pb2.GetAlbumsRequest.SerializeToString,
             musicservice_dot_v1_dot_albums__pb2.GetAlbumsResponse.FromString,
             options, channel_credentials,
@@ -173,7 +173,7 @@ class AlbumService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.AlbumService/UpdateAlbum',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.AlbumService/UpdateAlbum',
             musicservice_dot_v1_dot_albums__pb2.UpdateAlbumRequest.SerializeToString,
             musicservice_dot_v1_dot_albums__pb2.UpdateAlbumResponse.FromString,
             options, channel_credentials,
@@ -190,7 +190,7 @@ class AlbumService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.AlbumService/DeleteAlbum',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.AlbumService/DeleteAlbum',
             musicservice_dot_v1_dot_albums__pb2.DeleteAlbumRequest.SerializeToString,
             musicservice_dot_v1_dot_albums__pb2.DeleteAlbumResponse.FromString,
             options, channel_credentials,
@@ -207,7 +207,7 @@ class AlbumService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.AlbumService/ListAlbums',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.AlbumService/ListAlbums',
             musicservice_dot_v1_dot_albums__pb2.ListAlbumsRequest.SerializeToString,
             musicservice_dot_v1_dot_albums__pb2.ListAlbumsResponse.FromString,
             options, channel_credentials,

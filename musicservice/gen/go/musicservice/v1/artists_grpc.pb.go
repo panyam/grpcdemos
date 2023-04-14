@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ArtistService_CreateArtist_FullMethodName = "/musicservice.ArtistService/CreateArtist"
-	ArtistService_GetArtists_FullMethodName   = "/musicservice.ArtistService/GetArtists"
-	ArtistService_UpdateArtist_FullMethodName = "/musicservice.ArtistService/UpdateArtist"
-	ArtistService_DeleteArtist_FullMethodName = "/musicservice.ArtistService/DeleteArtist"
-	ArtistService_ListArtists_FullMethodName  = "/musicservice.ArtistService/ListArtists"
+	ArtistService_CreateArtist_FullMethodName = "/musicservice.v1.ArtistService/CreateArtist"
+	ArtistService_GetArtists_FullMethodName   = "/musicservice.v1.ArtistService/GetArtists"
+	ArtistService_UpdateArtist_FullMethodName = "/musicservice.v1.ArtistService/UpdateArtist"
+	ArtistService_DeleteArtist_FullMethodName = "/musicservice.v1.ArtistService/DeleteArtist"
+	ArtistService_ListArtists_FullMethodName  = "/musicservice.v1.ArtistService/ListArtists"
 )
 
 // ArtistServiceClient is the client API for ArtistService service.
@@ -236,7 +236,7 @@ func _ArtistService_ListArtists_Handler(srv interface{}, ctx context.Context, de
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ArtistService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "musicservice.ArtistService",
+	ServiceName: "musicservice.v1.ArtistService",
 	HandlerType: (*ArtistServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

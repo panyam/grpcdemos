@@ -303,7 +303,7 @@ func RegisterSongServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/musicservice.SongService/CreateSong", runtime.WithHTTPPathPattern("/v1/songs"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/musicservice.v1.SongService/CreateSong", runtime.WithHTTPPathPattern("/v1/songs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -328,7 +328,7 @@ func RegisterSongServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/musicservice.SongService/GetSongs", runtime.WithHTTPPathPattern("/v1/songs:batchGet"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/musicservice.v1.SongService/GetSongs", runtime.WithHTTPPathPattern("/v1/songs:batchGet"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -353,7 +353,7 @@ func RegisterSongServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/musicservice.SongService/UpdateSong", runtime.WithHTTPPathPattern("/v1/songs/{song.id=*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/musicservice.v1.SongService/UpdateSong", runtime.WithHTTPPathPattern("/v1/songs/{song.id=*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -378,7 +378,7 @@ func RegisterSongServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/musicservice.SongService/DeleteSong", runtime.WithHTTPPathPattern("/v1/nodes/{id=*}"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/musicservice.v1.SongService/DeleteSong", runtime.WithHTTPPathPattern("/v1/nodes/{id=*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -403,7 +403,7 @@ func RegisterSongServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/musicservice.SongService/ListSongs", runtime.WithHTTPPathPattern("/v1/songs"))
+		annotatedContext, err = runtime.AnnotateIncomingContext(ctx, mux, req, "/musicservice.v1.SongService/ListSongs", runtime.WithHTTPPathPattern("/v1/songs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -467,7 +467,7 @@ func RegisterSongServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/musicservice.SongService/CreateSong", runtime.WithHTTPPathPattern("/v1/songs"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/musicservice.v1.SongService/CreateSong", runtime.WithHTTPPathPattern("/v1/songs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -489,7 +489,7 @@ func RegisterSongServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/musicservice.SongService/GetSongs", runtime.WithHTTPPathPattern("/v1/songs:batchGet"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/musicservice.v1.SongService/GetSongs", runtime.WithHTTPPathPattern("/v1/songs:batchGet"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -511,7 +511,7 @@ func RegisterSongServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/musicservice.SongService/UpdateSong", runtime.WithHTTPPathPattern("/v1/songs/{song.id=*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/musicservice.v1.SongService/UpdateSong", runtime.WithHTTPPathPattern("/v1/songs/{song.id=*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -533,7 +533,7 @@ func RegisterSongServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/musicservice.SongService/DeleteSong", runtime.WithHTTPPathPattern("/v1/nodes/{id=*}"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/musicservice.v1.SongService/DeleteSong", runtime.WithHTTPPathPattern("/v1/nodes/{id=*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -555,7 +555,7 @@ func RegisterSongServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
 		var err error
 		var annotatedContext context.Context
-		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/musicservice.SongService/ListSongs", runtime.WithHTTPPathPattern("/v1/songs"))
+		annotatedContext, err = runtime.AnnotateContext(ctx, mux, req, "/musicservice.v1.SongService/ListSongs", runtime.WithHTTPPathPattern("/v1/songs"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

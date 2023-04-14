@@ -19,11 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	SongService_CreateSong_FullMethodName = "/musicservice.SongService/CreateSong"
-	SongService_GetSongs_FullMethodName   = "/musicservice.SongService/GetSongs"
-	SongService_UpdateSong_FullMethodName = "/musicservice.SongService/UpdateSong"
-	SongService_DeleteSong_FullMethodName = "/musicservice.SongService/DeleteSong"
-	SongService_ListSongs_FullMethodName  = "/musicservice.SongService/ListSongs"
+	SongService_CreateSong_FullMethodName = "/musicservice.v1.SongService/CreateSong"
+	SongService_GetSongs_FullMethodName   = "/musicservice.v1.SongService/GetSongs"
+	SongService_UpdateSong_FullMethodName = "/musicservice.v1.SongService/UpdateSong"
+	SongService_DeleteSong_FullMethodName = "/musicservice.v1.SongService/DeleteSong"
+	SongService_ListSongs_FullMethodName  = "/musicservice.v1.SongService/ListSongs"
 )
 
 // SongServiceClient is the client API for SongService service.
@@ -236,7 +236,7 @@ func _SongService_ListSongs_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var SongService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "musicservice.SongService",
+	ServiceName: "musicservice.v1.SongService",
 	HandlerType: (*SongServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

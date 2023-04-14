@@ -16,7 +16,7 @@ from musicservice.v1 import models_pb2 as musicservice_dot_v1_dot_models__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cmusicservice/v1/albums.proto\x12\x0cmusicservice\x1a google/protobuf/field_mask.proto\x1a\x1cmusicservice/v1/models.proto\x1a\x1cgoogle/api/annotations.proto\"?\n\x12\x43reateAlbumRequest\x12)\n\x05\x61lbum\x18\x01 \x01(\x0b\x32\x13.musicservice.AlbumR\x05\x61lbum\"@\n\x13\x43reateAlbumResponse\x12)\n\x05\x61lbum\x18\x01 \x01(\x0b\x32\x13.musicservice.AlbumR\x05\x61lbum\"|\n\x12UpdateAlbumRequest\x12)\n\x05\x61lbum\x18\x01 \x01(\x0b\x32\x13.musicservice.AlbumR\x05\x61lbum\x12;\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskR\nupdateMask\"@\n\x13UpdateAlbumResponse\x12)\n\x05\x61lbum\x18\x01 \x01(\x0b\x32\x13.musicservice.AlbumR\x05\x61lbum\"$\n\x10GetAlbumsRequest\x12\x10\n\x03ids\x18\x01 \x03(\tR\x03ids\"\xa8\x01\n\x11GetAlbumsResponse\x12\x43\n\x06\x61lbums\x18\x01 \x03(\x0b\x32+.musicservice.GetAlbumsResponse.AlbumsEntryR\x06\x61lbums\x1aN\n\x0b\x41lbumsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12)\n\x05value\x18\x02 \x01(\x0b\x32\x13.musicservice.AlbumR\x05value:\x02\x38\x01\"D\n\x11ListAlbumsRequest\x12\x19\n\x08page_key\x18\x01 \x01(\tR\x07pageKey\x12\x14\n\x05\x63ount\x18\x02 \x01(\x05R\x05\x63ount\"e\n\x12ListAlbumsResponse\x12+\n\x06\x61lbums\x18\x01 \x03(\x0b\x32\x13.musicservice.AlbumR\x06\x61lbums\x12\"\n\rnext_page_key\x18\x02 \x01(\tR\x0bnextPageKey\"$\n\x12\x44\x65leteAlbumRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"\x15\n\x13\x44\x65leteAlbumResponse2\xb3\x04\n\x0c\x41lbumService\x12i\n\x0b\x43reateAlbum\x12 .musicservice.CreateAlbumRequest\x1a!.musicservice.CreateAlbumResponse\"\x15\x82\xd3\xe4\x93\x02\x0f:\x01*\"\n/v1/albums\x12i\n\tGetAlbums\x12\x1e.musicservice.GetAlbumsRequest\x1a\x1f.musicservice.GetAlbumsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/albums:batchGet\x12z\n\x0bUpdateAlbum\x12 .musicservice.UpdateAlbumRequest\x1a!.musicservice.UpdateAlbumResponse\"&\x82\xd3\xe4\x93\x02 :\x05\x61lbum2\x17/v1/albums/{album.id=*}\x12l\n\x0b\x44\x65leteAlbum\x12 .musicservice.DeleteAlbumRequest\x1a!.musicservice.DeleteAlbumResponse\"\x18\x82\xd3\xe4\x93\x02\x12*\x10/v1/nodes/{id=*}\x12\x63\n\nListAlbums\x12\x1f.musicservice.ListAlbumsRequest\x1a .musicservice.ListAlbumsResponse\"\x12\x82\xd3\xe4\x93\x02\x0c\x12\n/v1/albumsB\x8e\x01\n\x10\x63om.musicserviceB\x0b\x41lbumsProtoP\x01Z\x1dmusic.com/musicservice/protos\xa2\x02\x03MXX\xaa\x02\x0cMusicservice\xca\x02\x0cMusicservice\xe2\x02\x18Musicservice\\GPBMetadata\xea\x02\x0cMusicserviceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1cmusicservice/v1/albums.proto\x12\x0fmusicservice.v1\x1a google/protobuf/field_mask.proto\x1a\x1cmusicservice/v1/models.proto\x1a\x1cgoogle/api/annotations.proto\"B\n\x12\x43reateAlbumRequest\x12,\n\x05\x61lbum\x18\x01 \x01(\x0b\x32\x16.musicservice.v1.AlbumR\x05\x61lbum\"C\n\x13\x43reateAlbumResponse\x12,\n\x05\x61lbum\x18\x01 \x01(\x0b\x32\x16.musicservice.v1.AlbumR\x05\x61lbum\"\x7f\n\x12UpdateAlbumRequest\x12,\n\x05\x61lbum\x18\x01 \x01(\x0b\x32\x16.musicservice.v1.AlbumR\x05\x61lbum\x12;\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskR\nupdateMask\"C\n\x13UpdateAlbumResponse\x12,\n\x05\x61lbum\x18\x01 \x01(\x0b\x32\x16.musicservice.v1.AlbumR\x05\x61lbum\"$\n\x10GetAlbumsRequest\x12\x10\n\x03ids\x18\x01 \x03(\tR\x03ids\"\xae\x01\n\x11GetAlbumsResponse\x12\x46\n\x06\x61lbums\x18\x01 \x03(\x0b\x32..musicservice.v1.GetAlbumsResponse.AlbumsEntryR\x06\x61lbums\x1aQ\n\x0b\x41lbumsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12,\n\x05value\x18\x02 \x01(\x0b\x32\x16.musicservice.v1.AlbumR\x05value:\x02\x38\x01\"D\n\x11ListAlbumsRequest\x12\x19\n\x08page_key\x18\x01 \x01(\tR\x07pageKey\x12\x14\n\x05\x63ount\x18\x02 \x01(\x05R\x05\x63ount\"h\n\x12ListAlbumsResponse\x12.\n\x06\x61lbums\x18\x01 \x03(\x0b\x32\x16.musicservice.v1.AlbumR\x06\x61lbums\x12\"\n\rnext_page_key\x18\x02 \x01(\tR\x0bnextPageKey\"$\n\x12\x44\x65leteAlbumRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"\x15\n\x13\x44\x65leteAlbumResponse2\xd2\x04\n\x0c\x41lbumService\x12o\n\x0b\x43reateAlbum\x12#.musicservice.v1.CreateAlbumRequest\x1a$.musicservice.v1.CreateAlbumResponse\"\x15\x82\xd3\xe4\x93\x02\x0f:\x01*\"\n/v1/albums\x12o\n\tGetAlbums\x12!.musicservice.v1.GetAlbumsRequest\x1a\".musicservice.v1.GetAlbumsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/albums:batchGet\x12\x80\x01\n\x0bUpdateAlbum\x12#.musicservice.v1.UpdateAlbumRequest\x1a$.musicservice.v1.UpdateAlbumResponse\"&\x82\xd3\xe4\x93\x02 :\x05\x61lbum2\x17/v1/albums/{album.id=*}\x12r\n\x0b\x44\x65leteAlbum\x12#.musicservice.v1.DeleteAlbumRequest\x1a$.musicservice.v1.DeleteAlbumResponse\"\x18\x82\xd3\xe4\x93\x02\x12*\x10/v1/nodes/{id=*}\x12i\n\nListAlbums\x12\".musicservice.v1.ListAlbumsRequest\x1a#.musicservice.v1.ListAlbumsResponse\"\x12\x82\xd3\xe4\x93\x02\x0c\x12\n/v1/albumsB\x9e\x01\n\x13\x63om.musicservice.v1B\x0b\x41lbumsProtoP\x01Z\x1dmusic.com/musicservice/protos\xa2\x02\x03MXX\xaa\x02\x0fMusicservice.V1\xca\x02\x0fMusicservice\\V1\xe2\x02\x1bMusicservice\\V1\\GPBMetadata\xea\x02\x10Musicservice::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,7 +24,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'musicservice.v1.albums_pb2'
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\020com.musicserviceB\013AlbumsProtoP\001Z\035music.com/musicservice/protos\242\002\003MXX\252\002\014Musicservice\312\002\014Musicservice\342\002\030Musicservice\\GPBMetadata\352\002\014Musicservice'
+  DESCRIPTOR._serialized_options = b'\n\023com.musicservice.v1B\013AlbumsProtoP\001Z\035music.com/musicservice/protos\242\002\003MXX\252\002\017Musicservice.V1\312\002\017Musicservice\\V1\342\002\033Musicservice\\V1\\GPBMetadata\352\002\020Musicservice::V1'
   _GETALBUMSRESPONSE_ALBUMSENTRY._options = None
   _GETALBUMSRESPONSE_ALBUMSENTRY._serialized_options = b'8\001'
   _ALBUMSERVICE.methods_by_name['CreateAlbum']._options = None
@@ -37,28 +37,28 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ALBUMSERVICE.methods_by_name['DeleteAlbum']._serialized_options = b'\202\323\344\223\002\022*\020/v1/nodes/{id=*}'
   _ALBUMSERVICE.methods_by_name['ListAlbums']._options = None
   _ALBUMSERVICE.methods_by_name['ListAlbums']._serialized_options = b'\202\323\344\223\002\014\022\n/v1/albums'
-  _globals['_CREATEALBUMREQUEST']._serialized_start=140
-  _globals['_CREATEALBUMREQUEST']._serialized_end=203
-  _globals['_CREATEALBUMRESPONSE']._serialized_start=205
-  _globals['_CREATEALBUMRESPONSE']._serialized_end=269
-  _globals['_UPDATEALBUMREQUEST']._serialized_start=271
-  _globals['_UPDATEALBUMREQUEST']._serialized_end=395
-  _globals['_UPDATEALBUMRESPONSE']._serialized_start=397
-  _globals['_UPDATEALBUMRESPONSE']._serialized_end=461
-  _globals['_GETALBUMSREQUEST']._serialized_start=463
-  _globals['_GETALBUMSREQUEST']._serialized_end=499
-  _globals['_GETALBUMSRESPONSE']._serialized_start=502
-  _globals['_GETALBUMSRESPONSE']._serialized_end=670
-  _globals['_GETALBUMSRESPONSE_ALBUMSENTRY']._serialized_start=592
-  _globals['_GETALBUMSRESPONSE_ALBUMSENTRY']._serialized_end=670
-  _globals['_LISTALBUMSREQUEST']._serialized_start=672
-  _globals['_LISTALBUMSREQUEST']._serialized_end=740
-  _globals['_LISTALBUMSRESPONSE']._serialized_start=742
-  _globals['_LISTALBUMSRESPONSE']._serialized_end=843
-  _globals['_DELETEALBUMREQUEST']._serialized_start=845
-  _globals['_DELETEALBUMREQUEST']._serialized_end=881
-  _globals['_DELETEALBUMRESPONSE']._serialized_start=883
-  _globals['_DELETEALBUMRESPONSE']._serialized_end=904
-  _globals['_ALBUMSERVICE']._serialized_start=907
-  _globals['_ALBUMSERVICE']._serialized_end=1470
+  _globals['_CREATEALBUMREQUEST']._serialized_start=143
+  _globals['_CREATEALBUMREQUEST']._serialized_end=209
+  _globals['_CREATEALBUMRESPONSE']._serialized_start=211
+  _globals['_CREATEALBUMRESPONSE']._serialized_end=278
+  _globals['_UPDATEALBUMREQUEST']._serialized_start=280
+  _globals['_UPDATEALBUMREQUEST']._serialized_end=407
+  _globals['_UPDATEALBUMRESPONSE']._serialized_start=409
+  _globals['_UPDATEALBUMRESPONSE']._serialized_end=476
+  _globals['_GETALBUMSREQUEST']._serialized_start=478
+  _globals['_GETALBUMSREQUEST']._serialized_end=514
+  _globals['_GETALBUMSRESPONSE']._serialized_start=517
+  _globals['_GETALBUMSRESPONSE']._serialized_end=691
+  _globals['_GETALBUMSRESPONSE_ALBUMSENTRY']._serialized_start=610
+  _globals['_GETALBUMSRESPONSE_ALBUMSENTRY']._serialized_end=691
+  _globals['_LISTALBUMSREQUEST']._serialized_start=693
+  _globals['_LISTALBUMSREQUEST']._serialized_end=761
+  _globals['_LISTALBUMSRESPONSE']._serialized_start=763
+  _globals['_LISTALBUMSRESPONSE']._serialized_end=867
+  _globals['_DELETEALBUMREQUEST']._serialized_start=869
+  _globals['_DELETEALBUMREQUEST']._serialized_end=905
+  _globals['_DELETEALBUMRESPONSE']._serialized_start=907
+  _globals['_DELETEALBUMRESPONSE']._serialized_end=928
+  _globals['_ALBUMSERVICE']._serialized_start=931
+  _globals['_ALBUMSERVICE']._serialized_end=1525
 # @@protoc_insertion_point(module_scope)

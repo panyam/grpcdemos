@@ -16,7 +16,7 @@ from musicservice.v1 import models_pb2 as musicservice_dot_v1_dot_models__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1dmusicservice/v1/artists.proto\x12\x0cmusicservice\x1a google/protobuf/field_mask.proto\x1a\x1cmusicservice/v1/models.proto\x1a\x1cgoogle/api/annotations.proto\"C\n\x13\x43reateArtistRequest\x12,\n\x06\x61rtist\x18\x01 \x01(\x0b\x32\x14.musicservice.ArtistR\x06\x61rtist\"D\n\x14\x43reateArtistResponse\x12,\n\x06\x61rtist\x18\x01 \x01(\x0b\x32\x14.musicservice.ArtistR\x06\x61rtist\"\x80\x01\n\x13UpdateArtistRequest\x12,\n\x06\x61rtist\x18\x01 \x01(\x0b\x32\x14.musicservice.ArtistR\x06\x61rtist\x12;\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskR\nupdateMask\"D\n\x14UpdateArtistResponse\x12,\n\x06\x61rtist\x18\x01 \x01(\x0b\x32\x14.musicservice.ArtistR\x06\x61rtist\"%\n\x11GetArtistsRequest\x12\x10\n\x03ids\x18\x01 \x03(\tR\x03ids\"\xaf\x01\n\x12GetArtistsResponse\x12G\n\x07\x61rtists\x18\x01 \x03(\x0b\x32-.musicservice.GetArtistsResponse.ArtistsEntryR\x07\x61rtists\x1aP\n\x0c\x41rtistsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12*\n\x05value\x18\x02 \x01(\x0b\x32\x14.musicservice.ArtistR\x05value:\x02\x38\x01\"E\n\x12ListArtistsRequest\x12\x19\n\x08page_key\x18\x01 \x01(\tR\x07pageKey\x12\x14\n\x05\x63ount\x18\x02 \x01(\x05R\x05\x63ount\"i\n\x13ListArtistsResponse\x12.\n\x07\x61rtists\x18\x01 \x03(\x0b\x32\x14.musicservice.ArtistR\x07\x61rtists\x12\"\n\rnext_page_key\x18\x02 \x01(\tR\x0bnextPageKey\"%\n\x13\x44\x65leteArtistRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"\x16\n\x14\x44\x65leteArtistResponse2\xca\x04\n\rArtistService\x12m\n\x0c\x43reateArtist\x12!.musicservice.CreateArtistRequest\x1a\".musicservice.CreateArtistResponse\"\x16\x82\xd3\xe4\x93\x02\x10:\x01*\"\x0b/v1/artists\x12m\n\nGetArtists\x12\x1f.musicservice.GetArtistsRequest\x1a .musicservice.GetArtistsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/artists:batchGet\x12\x80\x01\n\x0cUpdateArtist\x12!.musicservice.UpdateArtistRequest\x1a\".musicservice.UpdateArtistResponse\")\x82\xd3\xe4\x93\x02#:\x06\x61rtist2\x19/v1/artists/{artist.id=*}\x12o\n\x0c\x44\x65leteArtist\x12!.musicservice.DeleteArtistRequest\x1a\".musicservice.DeleteArtistResponse\"\x18\x82\xd3\xe4\x93\x02\x12*\x10/v1/nodes/{id=*}\x12g\n\x0bListArtists\x12 .musicservice.ListArtistsRequest\x1a!.musicservice.ListArtistsResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/artistsB\x8f\x01\n\x10\x63om.musicserviceB\x0c\x41rtistsProtoP\x01Z\x1dmusic.com/musicservice/protos\xa2\x02\x03MXX\xaa\x02\x0cMusicservice\xca\x02\x0cMusicservice\xe2\x02\x18Musicservice\\GPBMetadata\xea\x02\x0cMusicserviceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1dmusicservice/v1/artists.proto\x12\x0fmusicservice.v1\x1a google/protobuf/field_mask.proto\x1a\x1cmusicservice/v1/models.proto\x1a\x1cgoogle/api/annotations.proto\"F\n\x13\x43reateArtistRequest\x12/\n\x06\x61rtist\x18\x01 \x01(\x0b\x32\x17.musicservice.v1.ArtistR\x06\x61rtist\"G\n\x14\x43reateArtistResponse\x12/\n\x06\x61rtist\x18\x01 \x01(\x0b\x32\x17.musicservice.v1.ArtistR\x06\x61rtist\"\x83\x01\n\x13UpdateArtistRequest\x12/\n\x06\x61rtist\x18\x01 \x01(\x0b\x32\x17.musicservice.v1.ArtistR\x06\x61rtist\x12;\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskR\nupdateMask\"G\n\x14UpdateArtistResponse\x12/\n\x06\x61rtist\x18\x01 \x01(\x0b\x32\x17.musicservice.v1.ArtistR\x06\x61rtist\"%\n\x11GetArtistsRequest\x12\x10\n\x03ids\x18\x01 \x03(\tR\x03ids\"\xb5\x01\n\x12GetArtistsResponse\x12J\n\x07\x61rtists\x18\x01 \x03(\x0b\x32\x30.musicservice.v1.GetArtistsResponse.ArtistsEntryR\x07\x61rtists\x1aS\n\x0c\x41rtistsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12-\n\x05value\x18\x02 \x01(\x0b\x32\x17.musicservice.v1.ArtistR\x05value:\x02\x38\x01\"E\n\x12ListArtistsRequest\x12\x19\n\x08page_key\x18\x01 \x01(\tR\x07pageKey\x12\x14\n\x05\x63ount\x18\x02 \x01(\x05R\x05\x63ount\"l\n\x13ListArtistsResponse\x12\x31\n\x07\x61rtists\x18\x01 \x03(\x0b\x32\x17.musicservice.v1.ArtistR\x07\x61rtists\x12\"\n\rnext_page_key\x18\x02 \x01(\tR\x0bnextPageKey\"%\n\x13\x44\x65leteArtistRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"\x16\n\x14\x44\x65leteArtistResponse2\xe8\x04\n\rArtistService\x12s\n\x0c\x43reateArtist\x12$.musicservice.v1.CreateArtistRequest\x1a%.musicservice.v1.CreateArtistResponse\"\x16\x82\xd3\xe4\x93\x02\x10:\x01*\"\x0b/v1/artists\x12s\n\nGetArtists\x12\".musicservice.v1.GetArtistsRequest\x1a#.musicservice.v1.GetArtistsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/artists:batchGet\x12\x86\x01\n\x0cUpdateArtist\x12$.musicservice.v1.UpdateArtistRequest\x1a%.musicservice.v1.UpdateArtistResponse\")\x82\xd3\xe4\x93\x02#:\x06\x61rtist2\x19/v1/artists/{artist.id=*}\x12u\n\x0c\x44\x65leteArtist\x12$.musicservice.v1.DeleteArtistRequest\x1a%.musicservice.v1.DeleteArtistResponse\"\x18\x82\xd3\xe4\x93\x02\x12*\x10/v1/nodes/{id=*}\x12m\n\x0bListArtists\x12#.musicservice.v1.ListArtistsRequest\x1a$.musicservice.v1.ListArtistsResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/artistsB\x9f\x01\n\x13\x63om.musicservice.v1B\x0c\x41rtistsProtoP\x01Z\x1dmusic.com/musicservice/protos\xa2\x02\x03MXX\xaa\x02\x0fMusicservice.V1\xca\x02\x0fMusicservice\\V1\xe2\x02\x1bMusicservice\\V1\\GPBMetadata\xea\x02\x10Musicservice::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,7 +24,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'musicservice.v1.artists_pb2
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\020com.musicserviceB\014ArtistsProtoP\001Z\035music.com/musicservice/protos\242\002\003MXX\252\002\014Musicservice\312\002\014Musicservice\342\002\030Musicservice\\GPBMetadata\352\002\014Musicservice'
+  DESCRIPTOR._serialized_options = b'\n\023com.musicservice.v1B\014ArtistsProtoP\001Z\035music.com/musicservice/protos\242\002\003MXX\252\002\017Musicservice.V1\312\002\017Musicservice\\V1\342\002\033Musicservice\\V1\\GPBMetadata\352\002\020Musicservice::V1'
   _GETARTISTSRESPONSE_ARTISTSENTRY._options = None
   _GETARTISTSRESPONSE_ARTISTSENTRY._serialized_options = b'8\001'
   _ARTISTSERVICE.methods_by_name['CreateArtist']._options = None
@@ -37,28 +37,28 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ARTISTSERVICE.methods_by_name['DeleteArtist']._serialized_options = b'\202\323\344\223\002\022*\020/v1/nodes/{id=*}'
   _ARTISTSERVICE.methods_by_name['ListArtists']._options = None
   _ARTISTSERVICE.methods_by_name['ListArtists']._serialized_options = b'\202\323\344\223\002\r\022\013/v1/artists'
-  _globals['_CREATEARTISTREQUEST']._serialized_start=141
-  _globals['_CREATEARTISTREQUEST']._serialized_end=208
-  _globals['_CREATEARTISTRESPONSE']._serialized_start=210
-  _globals['_CREATEARTISTRESPONSE']._serialized_end=278
-  _globals['_UPDATEARTISTREQUEST']._serialized_start=281
-  _globals['_UPDATEARTISTREQUEST']._serialized_end=409
-  _globals['_UPDATEARTISTRESPONSE']._serialized_start=411
-  _globals['_UPDATEARTISTRESPONSE']._serialized_end=479
-  _globals['_GETARTISTSREQUEST']._serialized_start=481
-  _globals['_GETARTISTSREQUEST']._serialized_end=518
-  _globals['_GETARTISTSRESPONSE']._serialized_start=521
-  _globals['_GETARTISTSRESPONSE']._serialized_end=696
-  _globals['_GETARTISTSRESPONSE_ARTISTSENTRY']._serialized_start=616
-  _globals['_GETARTISTSRESPONSE_ARTISTSENTRY']._serialized_end=696
-  _globals['_LISTARTISTSREQUEST']._serialized_start=698
-  _globals['_LISTARTISTSREQUEST']._serialized_end=767
-  _globals['_LISTARTISTSRESPONSE']._serialized_start=769
-  _globals['_LISTARTISTSRESPONSE']._serialized_end=874
-  _globals['_DELETEARTISTREQUEST']._serialized_start=876
-  _globals['_DELETEARTISTREQUEST']._serialized_end=913
-  _globals['_DELETEARTISTRESPONSE']._serialized_start=915
-  _globals['_DELETEARTISTRESPONSE']._serialized_end=937
-  _globals['_ARTISTSERVICE']._serialized_start=940
-  _globals['_ARTISTSERVICE']._serialized_end=1526
+  _globals['_CREATEARTISTREQUEST']._serialized_start=144
+  _globals['_CREATEARTISTREQUEST']._serialized_end=214
+  _globals['_CREATEARTISTRESPONSE']._serialized_start=216
+  _globals['_CREATEARTISTRESPONSE']._serialized_end=287
+  _globals['_UPDATEARTISTREQUEST']._serialized_start=290
+  _globals['_UPDATEARTISTREQUEST']._serialized_end=421
+  _globals['_UPDATEARTISTRESPONSE']._serialized_start=423
+  _globals['_UPDATEARTISTRESPONSE']._serialized_end=494
+  _globals['_GETARTISTSREQUEST']._serialized_start=496
+  _globals['_GETARTISTSREQUEST']._serialized_end=533
+  _globals['_GETARTISTSRESPONSE']._serialized_start=536
+  _globals['_GETARTISTSRESPONSE']._serialized_end=717
+  _globals['_GETARTISTSRESPONSE_ARTISTSENTRY']._serialized_start=634
+  _globals['_GETARTISTSRESPONSE_ARTISTSENTRY']._serialized_end=717
+  _globals['_LISTARTISTSREQUEST']._serialized_start=719
+  _globals['_LISTARTISTSREQUEST']._serialized_end=788
+  _globals['_LISTARTISTSRESPONSE']._serialized_start=790
+  _globals['_LISTARTISTSRESPONSE']._serialized_end=898
+  _globals['_DELETEARTISTREQUEST']._serialized_start=900
+  _globals['_DELETEARTISTREQUEST']._serialized_end=937
+  _globals['_DELETEARTISTRESPONSE']._serialized_start=939
+  _globals['_DELETEARTISTRESPONSE']._serialized_end=961
+  _globals['_ARTISTSERVICE']._serialized_start=964
+  _globals['_ARTISTSERVICE']._serialized_end=1580
 # @@protoc_insertion_point(module_scope)

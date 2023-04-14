@@ -17,27 +17,27 @@ class SongServiceStub(object):
             channel: A grpc.Channel.
         """
         self.CreateSong = channel.unary_unary(
-                '/musicservice.SongService/CreateSong',
+                '/musicservice.v1.SongService/CreateSong',
                 request_serializer=musicservice_dot_v1_dot_songs__pb2.CreateSongRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_songs__pb2.CreateSongResponse.FromString,
                 )
         self.GetSongs = channel.unary_unary(
-                '/musicservice.SongService/GetSongs',
+                '/musicservice.v1.SongService/GetSongs',
                 request_serializer=musicservice_dot_v1_dot_songs__pb2.GetSongsRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_songs__pb2.GetSongsResponse.FromString,
                 )
         self.UpdateSong = channel.unary_unary(
-                '/musicservice.SongService/UpdateSong',
+                '/musicservice.v1.SongService/UpdateSong',
                 request_serializer=musicservice_dot_v1_dot_songs__pb2.UpdateSongRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_songs__pb2.UpdateSongResponse.FromString,
                 )
         self.DeleteSong = channel.unary_unary(
-                '/musicservice.SongService/DeleteSong',
+                '/musicservice.v1.SongService/DeleteSong',
                 request_serializer=musicservice_dot_v1_dot_songs__pb2.DeleteSongRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_songs__pb2.DeleteSongResponse.FromString,
                 )
         self.ListSongs = channel.unary_unary(
-                '/musicservice.SongService/ListSongs',
+                '/musicservice.v1.SongService/ListSongs',
                 request_serializer=musicservice_dot_v1_dot_songs__pb2.ListSongsRequest.SerializeToString,
                 response_deserializer=musicservice_dot_v1_dot_songs__pb2.ListSongsResponse.FromString,
                 )
@@ -118,7 +118,7 @@ def add_SongServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'musicservice.SongService', rpc_method_handlers)
+            'musicservice.v1.SongService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -139,7 +139,7 @@ class SongService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.SongService/CreateSong',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.SongService/CreateSong',
             musicservice_dot_v1_dot_songs__pb2.CreateSongRequest.SerializeToString,
             musicservice_dot_v1_dot_songs__pb2.CreateSongResponse.FromString,
             options, channel_credentials,
@@ -156,7 +156,7 @@ class SongService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.SongService/GetSongs',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.SongService/GetSongs',
             musicservice_dot_v1_dot_songs__pb2.GetSongsRequest.SerializeToString,
             musicservice_dot_v1_dot_songs__pb2.GetSongsResponse.FromString,
             options, channel_credentials,
@@ -173,7 +173,7 @@ class SongService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.SongService/UpdateSong',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.SongService/UpdateSong',
             musicservice_dot_v1_dot_songs__pb2.UpdateSongRequest.SerializeToString,
             musicservice_dot_v1_dot_songs__pb2.UpdateSongResponse.FromString,
             options, channel_credentials,
@@ -190,7 +190,7 @@ class SongService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.SongService/DeleteSong',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.SongService/DeleteSong',
             musicservice_dot_v1_dot_songs__pb2.DeleteSongRequest.SerializeToString,
             musicservice_dot_v1_dot_songs__pb2.DeleteSongResponse.FromString,
             options, channel_credentials,
@@ -207,7 +207,7 @@ class SongService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/musicservice.SongService/ListSongs',
+        return grpc.experimental.unary_unary(request, target, '/musicservice.v1.SongService/ListSongs',
             musicservice_dot_v1_dot_songs__pb2.ListSongsRequest.SerializeToString,
             musicservice_dot_v1_dot_songs__pb2.ListSongsResponse.FromString,
             options, channel_credentials,

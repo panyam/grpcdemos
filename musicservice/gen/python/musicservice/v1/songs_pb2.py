@@ -16,7 +16,7 @@ from musicservice.v1 import models_pb2 as musicservice_dot_v1_dot_models__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bmusicservice/v1/songs.proto\x12\x0cmusicservice\x1a google/protobuf/field_mask.proto\x1a\x1cmusicservice/v1/models.proto\x1a\x1cgoogle/api/annotations.proto\";\n\x11\x43reateSongRequest\x12&\n\x04song\x18\x01 \x01(\x0b\x32\x12.musicservice.SongR\x04song\"<\n\x12\x43reateSongResponse\x12&\n\x04song\x18\x01 \x01(\x0b\x32\x12.musicservice.SongR\x04song\"x\n\x11UpdateSongRequest\x12&\n\x04song\x18\x01 \x01(\x0b\x32\x12.musicservice.SongR\x04song\x12;\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskR\nupdateMask\"<\n\x12UpdateSongResponse\x12&\n\x04song\x18\x01 \x01(\x0b\x32\x12.musicservice.SongR\x04song\"#\n\x0fGetSongsRequest\x12\x10\n\x03ids\x18\x01 \x03(\tR\x03ids\"\xa1\x01\n\x10GetSongsResponse\x12?\n\x05songs\x18\x01 \x03(\x0b\x32).musicservice.GetSongsResponse.SongsEntryR\x05songs\x1aL\n\nSongsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12(\n\x05value\x18\x02 \x01(\x0b\x32\x12.musicservice.SongR\x05value:\x02\x38\x01\"C\n\x10ListSongsRequest\x12\x19\n\x08page_key\x18\x01 \x01(\tR\x07pageKey\x12\x14\n\x05\x63ount\x18\x02 \x01(\x05R\x05\x63ount\"a\n\x11ListSongsResponse\x12(\n\x05songs\x18\x01 \x03(\x0b\x32\x12.musicservice.SongR\x05songs\x12\"\n\rnext_page_key\x18\x02 \x01(\tR\x0bnextPageKey\"#\n\x11\x44\x65leteSongRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"\x14\n\x12\x44\x65leteSongResponse2\x9d\x04\n\x0bSongService\x12\x65\n\nCreateSong\x12\x1f.musicservice.CreateSongRequest\x1a .musicservice.CreateSongResponse\"\x14\x82\xd3\xe4\x93\x02\x0e:\x01*\"\t/v1/songs\x12\x65\n\x08GetSongs\x12\x1d.musicservice.GetSongsRequest\x1a\x1e.musicservice.GetSongsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/songs:batchGet\x12t\n\nUpdateSong\x12\x1f.musicservice.UpdateSongRequest\x1a .musicservice.UpdateSongResponse\"#\x82\xd3\xe4\x93\x02\x1d:\x04song2\x15/v1/songs/{song.id=*}\x12i\n\nDeleteSong\x12\x1f.musicservice.DeleteSongRequest\x1a .musicservice.DeleteSongResponse\"\x18\x82\xd3\xe4\x93\x02\x12*\x10/v1/nodes/{id=*}\x12_\n\tListSongs\x12\x1e.musicservice.ListSongsRequest\x1a\x1f.musicservice.ListSongsResponse\"\x11\x82\xd3\xe4\x93\x02\x0b\x12\t/v1/songsB\x8d\x01\n\x10\x63om.musicserviceB\nSongsProtoP\x01Z\x1dmusic.com/musicservice/protos\xa2\x02\x03MXX\xaa\x02\x0cMusicservice\xca\x02\x0cMusicservice\xe2\x02\x18Musicservice\\GPBMetadata\xea\x02\x0cMusicserviceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1bmusicservice/v1/songs.proto\x12\x0fmusicservice.v1\x1a google/protobuf/field_mask.proto\x1a\x1cmusicservice/v1/models.proto\x1a\x1cgoogle/api/annotations.proto\">\n\x11\x43reateSongRequest\x12)\n\x04song\x18\x01 \x01(\x0b\x32\x15.musicservice.v1.SongR\x04song\"?\n\x12\x43reateSongResponse\x12)\n\x04song\x18\x01 \x01(\x0b\x32\x15.musicservice.v1.SongR\x04song\"{\n\x11UpdateSongRequest\x12)\n\x04song\x18\x01 \x01(\x0b\x32\x15.musicservice.v1.SongR\x04song\x12;\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskR\nupdateMask\"?\n\x12UpdateSongResponse\x12)\n\x04song\x18\x01 \x01(\x0b\x32\x15.musicservice.v1.SongR\x04song\"#\n\x0fGetSongsRequest\x12\x10\n\x03ids\x18\x01 \x03(\tR\x03ids\"\xa7\x01\n\x10GetSongsResponse\x12\x42\n\x05songs\x18\x01 \x03(\x0b\x32,.musicservice.v1.GetSongsResponse.SongsEntryR\x05songs\x1aO\n\nSongsEntry\x12\x10\n\x03key\x18\x01 \x01(\tR\x03key\x12+\n\x05value\x18\x02 \x01(\x0b\x32\x15.musicservice.v1.SongR\x05value:\x02\x38\x01\"C\n\x10ListSongsRequest\x12\x19\n\x08page_key\x18\x01 \x01(\tR\x07pageKey\x12\x14\n\x05\x63ount\x18\x02 \x01(\x05R\x05\x63ount\"d\n\x11ListSongsResponse\x12+\n\x05songs\x18\x01 \x03(\x0b\x32\x15.musicservice.v1.SongR\x05songs\x12\"\n\rnext_page_key\x18\x02 \x01(\tR\x0bnextPageKey\"#\n\x11\x44\x65leteSongRequest\x12\x0e\n\x02id\x18\x01 \x01(\tR\x02id\"\x14\n\x12\x44\x65leteSongResponse2\xbb\x04\n\x0bSongService\x12k\n\nCreateSong\x12\".musicservice.v1.CreateSongRequest\x1a#.musicservice.v1.CreateSongResponse\"\x14\x82\xd3\xe4\x93\x02\x0e:\x01*\"\t/v1/songs\x12k\n\x08GetSongs\x12 .musicservice.v1.GetSongsRequest\x1a!.musicservice.v1.GetSongsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/songs:batchGet\x12z\n\nUpdateSong\x12\".musicservice.v1.UpdateSongRequest\x1a#.musicservice.v1.UpdateSongResponse\"#\x82\xd3\xe4\x93\x02\x1d:\x04song2\x15/v1/songs/{song.id=*}\x12o\n\nDeleteSong\x12\".musicservice.v1.DeleteSongRequest\x1a#.musicservice.v1.DeleteSongResponse\"\x18\x82\xd3\xe4\x93\x02\x12*\x10/v1/nodes/{id=*}\x12\x65\n\tListSongs\x12!.musicservice.v1.ListSongsRequest\x1a\".musicservice.v1.ListSongsResponse\"\x11\x82\xd3\xe4\x93\x02\x0b\x12\t/v1/songsB\x9d\x01\n\x13\x63om.musicservice.v1B\nSongsProtoP\x01Z\x1dmusic.com/musicservice/protos\xa2\x02\x03MXX\xaa\x02\x0fMusicservice.V1\xca\x02\x0fMusicservice\\V1\xe2\x02\x1bMusicservice\\V1\\GPBMetadata\xea\x02\x10Musicservice::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,7 +24,7 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'musicservice.v1.songs_pb2',
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'\n\020com.musicserviceB\nSongsProtoP\001Z\035music.com/musicservice/protos\242\002\003MXX\252\002\014Musicservice\312\002\014Musicservice\342\002\030Musicservice\\GPBMetadata\352\002\014Musicservice'
+  DESCRIPTOR._serialized_options = b'\n\023com.musicservice.v1B\nSongsProtoP\001Z\035music.com/musicservice/protos\242\002\003MXX\252\002\017Musicservice.V1\312\002\017Musicservice\\V1\342\002\033Musicservice\\V1\\GPBMetadata\352\002\020Musicservice::V1'
   _GETSONGSRESPONSE_SONGSENTRY._options = None
   _GETSONGSRESPONSE_SONGSENTRY._serialized_options = b'8\001'
   _SONGSERVICE.methods_by_name['CreateSong']._options = None
@@ -37,28 +37,28 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SONGSERVICE.methods_by_name['DeleteSong']._serialized_options = b'\202\323\344\223\002\022*\020/v1/nodes/{id=*}'
   _SONGSERVICE.methods_by_name['ListSongs']._options = None
   _SONGSERVICE.methods_by_name['ListSongs']._serialized_options = b'\202\323\344\223\002\013\022\t/v1/songs'
-  _globals['_CREATESONGREQUEST']._serialized_start=139
-  _globals['_CREATESONGREQUEST']._serialized_end=198
-  _globals['_CREATESONGRESPONSE']._serialized_start=200
-  _globals['_CREATESONGRESPONSE']._serialized_end=260
-  _globals['_UPDATESONGREQUEST']._serialized_start=262
-  _globals['_UPDATESONGREQUEST']._serialized_end=382
-  _globals['_UPDATESONGRESPONSE']._serialized_start=384
-  _globals['_UPDATESONGRESPONSE']._serialized_end=444
-  _globals['_GETSONGSREQUEST']._serialized_start=446
-  _globals['_GETSONGSREQUEST']._serialized_end=481
-  _globals['_GETSONGSRESPONSE']._serialized_start=484
-  _globals['_GETSONGSRESPONSE']._serialized_end=645
-  _globals['_GETSONGSRESPONSE_SONGSENTRY']._serialized_start=569
-  _globals['_GETSONGSRESPONSE_SONGSENTRY']._serialized_end=645
-  _globals['_LISTSONGSREQUEST']._serialized_start=647
-  _globals['_LISTSONGSREQUEST']._serialized_end=714
-  _globals['_LISTSONGSRESPONSE']._serialized_start=716
-  _globals['_LISTSONGSRESPONSE']._serialized_end=813
-  _globals['_DELETESONGREQUEST']._serialized_start=815
-  _globals['_DELETESONGREQUEST']._serialized_end=850
-  _globals['_DELETESONGRESPONSE']._serialized_start=852
-  _globals['_DELETESONGRESPONSE']._serialized_end=872
-  _globals['_SONGSERVICE']._serialized_start=875
-  _globals['_SONGSERVICE']._serialized_end=1416
+  _globals['_CREATESONGREQUEST']._serialized_start=142
+  _globals['_CREATESONGREQUEST']._serialized_end=204
+  _globals['_CREATESONGRESPONSE']._serialized_start=206
+  _globals['_CREATESONGRESPONSE']._serialized_end=269
+  _globals['_UPDATESONGREQUEST']._serialized_start=271
+  _globals['_UPDATESONGREQUEST']._serialized_end=394
+  _globals['_UPDATESONGRESPONSE']._serialized_start=396
+  _globals['_UPDATESONGRESPONSE']._serialized_end=459
+  _globals['_GETSONGSREQUEST']._serialized_start=461
+  _globals['_GETSONGSREQUEST']._serialized_end=496
+  _globals['_GETSONGSRESPONSE']._serialized_start=499
+  _globals['_GETSONGSRESPONSE']._serialized_end=666
+  _globals['_GETSONGSRESPONSE_SONGSENTRY']._serialized_start=587
+  _globals['_GETSONGSRESPONSE_SONGSENTRY']._serialized_end=666
+  _globals['_LISTSONGSREQUEST']._serialized_start=668
+  _globals['_LISTSONGSREQUEST']._serialized_end=735
+  _globals['_LISTSONGSRESPONSE']._serialized_start=737
+  _globals['_LISTSONGSRESPONSE']._serialized_end=837
+  _globals['_DELETESONGREQUEST']._serialized_start=839
+  _globals['_DELETESONGREQUEST']._serialized_end=874
+  _globals['_DELETESONGRESPONSE']._serialized_start=876
+  _globals['_DELETESONGRESPONSE']._serialized_end=896
+  _globals['_SONGSERVICE']._serialized_start=899
+  _globals['_SONGSERVICE']._serialized_end=1470
 # @@protoc_insertion_point(module_scope)

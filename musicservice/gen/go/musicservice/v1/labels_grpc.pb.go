@@ -19,14 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	LabelService_CreateLabel_FullMethodName = "/musicservice.LabelService/CreateLabel"
-	LabelService_GetLabels_FullMethodName   = "/musicservice.LabelService/GetLabels"
-	LabelService_UpdateLabel_FullMethodName = "/musicservice.LabelService/UpdateLabel"
-	LabelService_DeleteLabel_FullMethodName = "/musicservice.LabelService/DeleteLabel"
-	LabelService_ListLabels_FullMethodName  = "/musicservice.LabelService/ListLabels"
-	LabelService_AddAlbum_FullMethodName    = "/musicservice.LabelService/AddAlbum"
-	LabelService_RemoveAlbum_FullMethodName = "/musicservice.LabelService/RemoveAlbum"
-	LabelService_ListAlbums_FullMethodName  = "/musicservice.LabelService/ListAlbums"
+	LabelService_CreateLabel_FullMethodName = "/musicservice.v1.LabelService/CreateLabel"
+	LabelService_GetLabels_FullMethodName   = "/musicservice.v1.LabelService/GetLabels"
+	LabelService_UpdateLabel_FullMethodName = "/musicservice.v1.LabelService/UpdateLabel"
+	LabelService_DeleteLabel_FullMethodName = "/musicservice.v1.LabelService/DeleteLabel"
+	LabelService_ListLabels_FullMethodName  = "/musicservice.v1.LabelService/ListLabels"
+	LabelService_AddAlbum_FullMethodName    = "/musicservice.v1.LabelService/AddAlbum"
+	LabelService_RemoveAlbum_FullMethodName = "/musicservice.v1.LabelService/RemoveAlbum"
+	LabelService_ListAlbums_FullMethodName  = "/musicservice.v1.LabelService/ListAlbums"
 )
 
 // LabelServiceClient is the client API for LabelService service.
@@ -48,7 +48,7 @@ type LabelServiceClient interface {
 	// Remove an album from this label.
 	RemoveAlbum(ctx context.Context, in *RemoveAlbumRequest, opts ...grpc.CallOption) (*RemoveAlbumResponse, error)
 	// List all albums owned by this label.
-	ListAlbums(ctx context.Context, in *ListAlbumsInLabelRequest, opts ...grpc.CallOption) (*ListAlbumsInLabelResponse, error)
+	ListAlbums(ctx context.Context, in *LabelServiceListAlbumsRequest, opts ...grpc.CallOption) (*LabelServiceListAlbumsResponse, error)
 }
 
 type labelServiceClient struct {
@@ -122,8 +122,8 @@ func (c *labelServiceClient) RemoveAlbum(ctx context.Context, in *RemoveAlbumReq
 	return out, nil
 }
 
-func (c *labelServiceClient) ListAlbums(ctx context.Context, in *ListAlbumsInLabelRequest, opts ...grpc.CallOption) (*ListAlbumsInLabelResponse, error) {
-	out := new(ListAlbumsInLabelResponse)
+func (c *labelServiceClient) ListAlbums(ctx context.Context, in *LabelServiceListAlbumsRequest, opts ...grpc.CallOption) (*LabelServiceListAlbumsResponse, error) {
+	out := new(LabelServiceListAlbumsResponse)
 	err := c.cc.Invoke(ctx, LabelService_ListAlbums_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -150,7 +150,7 @@ type LabelServiceServer interface {
 	// Remove an album from this label.
 	RemoveAlbum(context.Context, *RemoveAlbumRequest) (*RemoveAlbumResponse, error)
 	// List all albums owned by this label.
-	ListAlbums(context.Context, *ListAlbumsInLabelRequest) (*ListAlbumsInLabelResponse, error)
+	ListAlbums(context.Context, *LabelServiceListAlbumsRequest) (*LabelServiceListAlbumsResponse, error)
 }
 
 // UnimplementedLabelServiceServer should be embedded to have forward compatible implementations.
@@ -178,7 +178,7 @@ func (UnimplementedLabelServiceServer) AddAlbum(context.Context, *AddAlbumReques
 func (UnimplementedLabelServiceServer) RemoveAlbum(context.Context, *RemoveAlbumRequest) (*RemoveAlbumResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RemoveAlbum not implemented")
 }
-func (UnimplementedLabelServiceServer) ListAlbums(context.Context, *ListAlbumsInLabelRequest) (*ListAlbumsInLabelResponse, error) {
+func (UnimplementedLabelServiceServer) ListAlbums(context.Context, *LabelServiceListAlbumsRequest) (*LabelServiceListAlbumsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListAlbums not implemented")
 }
 
@@ -320,7 +320,7 @@ func _LabelService_RemoveAlbum_Handler(srv interface{}, ctx context.Context, dec
 }
 
 func _LabelService_ListAlbums_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ListAlbumsInLabelRequest)
+	in := new(LabelServiceListAlbumsRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -332,7 +332,7 @@ func _LabelService_ListAlbums_Handler(srv interface{}, ctx context.Context, dec 
 		FullMethod: LabelService_ListAlbums_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LabelServiceServer).ListAlbums(ctx, req.(*ListAlbumsInLabelRequest))
+		return srv.(LabelServiceServer).ListAlbums(ctx, req.(*LabelServiceListAlbumsRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -341,7 +341,7 @@ func _LabelService_ListAlbums_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var LabelService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "musicservice.LabelService",
+	ServiceName: "musicservice.v1.LabelService",
 	HandlerType: (*LabelServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
